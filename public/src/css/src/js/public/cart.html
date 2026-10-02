@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Shopping Cart | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="View and manage your shopping cart at DANHAYS.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danhays.com/cart">
+    <meta property="og:title" content="Shopping Cart | DANHAYS">
+    <meta property="og:description" content="View and manage your shopping cart at DANHAYS.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/variables.css">
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/components.css">
+    <link rel="stylesheet" href="/src/css/cart.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading cart...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="left">
+                        <p>Welcome to DANHAYS - The Home of Melanin Beauty</p>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="link">Track Order</a>
+                        <span>|</span>
+                        <a href="#" class="link">Help Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="/" class="logo-link">
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <nav class="nav-main">
+                        <ul class="nav-list">
+                            <li><a href="/shop?category=face" class="nav-link">Face</a></li>
+                            <li><a href="/shop?category=eyes" class="nav-link">Eyes</a></li>
+                            <li><a href="/shop?category=lips" class="nav-link">Lips</a></li>
+                            <li><a href="/shop?category=skincare" class="nav-link">Skincare</a></li>
+                            <li><a href="/shop?category=haircare" class="nav-link">Haircare</a></li>
+                            <li><a href="/brands" class="nav-link">Brands</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-icons">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <span>🔍</span>
+                        </button>
+                        <a href="/account" class="icon-btn">
+                            <span>👤</span>
+                        </a>
+                        <a href="/wishlist" class="icon-btn">
+                            <span>❤️</span>
+                        </a>
+                        <a href="/cart" class="icon-btn cart-btn">
+                            <span>🛒</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Shopping Cart</h1>
+                <p class="text-muted">Review your items before checkout</p>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section class="cart-section">
+            <div class="container">
+                <div class="cart-layout">
+                    <!-- Cart Items -->
+                    <div class="cart-items-container">
+                        <div class="cart-items-header">
+                            <h2>Your Items <span id="itemCount">(0)</span></h2>
+                            <a href="/shop" class="link">Continue Shopping</a>
+                        </div>
+
+                        <!-- Empty Cart Message -->
+                        <div class="empty-cart" id="emptyCart" style="display: none;">
+                            <div class="empty-state">
+                                <div class="empty-icon">🛒</div>
+                                <h3>Your cart is empty</h3>
+                                <p>Discover our beautiful collection of melanin-friendly beauty products</p>
+                                <a href="/shop" class="btn btn-primary">Start Shopping</a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Items List -->
+                        <div class="cart-items" id="cartItems">
+                            <!-- Items will be rendered here -->
+                        </div>
+                    </div>
+
+                    <!-- Cart Summary -->
+                    <aside class="cart-summary">
+                        <div class="summary-card">
+                            <h3>Order Summary</h3>
+
+                            <!-- Promo Code -->
+                            <div class="promo-section">
+                                <input type="text" id="promoCode" placeholder="Enter promo code" class="promo-input">
+                                <button class="btn btn-secondary" onclick="cartPage.applyPromo()">Apply</button>
+                            </div>
+
+                            <!-- Summary Items -->
+                            <div class="summary-items">
+                                <div class="summary-row">
+                                    <span>Subtotal</span>
+                                    <span id="subtotal">€0.00</span>
+                                </div>
+
+                                <div class="summary-row">
+                                    <span>Shipping</span>
+                                    <select id="shippingMethod" class="shipping-select" onchange="cartPage.calculateShipping()">
+                                        <option value="standard" data-price="4.95">Standard (3-7 days) - €4.95</option>
+                                        <option value="express" data-price="9.95">Express (1-3 days) - €9.95</option>
+                                        <option value="same-day" data-price="14.95">Same-Day - €14.95</option>
+                                        <option value="free" data-price="0">Free (Orders over €75)</option>
+                                    </select>
+                                </div>
+
+                                <div class="summary-row" id="discountRow" style="display: none;">
+                                    <span>Discount</span>
+                                    <span id="discount" class="text-success">-€0.00</span>
+                                </div>
+
+                                <div class="summary-divider"></div>
+
+                                <div class="summary-row total">
+                                    <span>Total</span>
+                                    <span id="total">€0.00</span>
+                                </div>
+                            </div>
+
+                            <!-- Checkout Buttons -->
+                            <button class="btn btn-primary w-full" onclick="window.location.href='/checkout'" id="checkoutBtn">
+                                Proceed to Checkout
+                            </button>
+
+                            <button class="btn btn-outline w-full mt-3" onclick="window.location.href='/shop'">
+                                Continue Shopping
+                            </button>
+
+                            <!-- Trust Icons -->
+                            <div class="trust-icons">
+                                <div class="trust-icon-item">
+                                    <span>🔒</span>
+                                    <small>Secure Checkout</small>
+                                </div>
+                                <div class="trust-icon-item">
+                                    <span>↩️</span>
+                                    <small>Easy Returns</small>
+                                </div>
+                                <div class="trust-icon-item">
+                                    <span>🚚</span>
+                                    <small>Fast Shipping</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rewards Info -->
+                        <div class="rewards-card">
+                            <h4>💎 Earn Rewards</h4>
+                            <p>Earn <strong id="rewardsPoints">0</strong> points with this purchase!</p>
+                            <small>Join Melanin Rewards to start earning points on every purchase</small>
+                            <a href="/account/rewards" class="link">Learn more</a>
+                        </div>
+
+                        <!-- Free Shipping Notice -->
+                        <div class="shipping-notice" id="freeShippingNotice" style="display: none;">
+                            <p>🎉 You qualify for <strong>free shipping</strong>!</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section class="recommendations-section" id="recommendationsSection" style="display: none;">
+            <div class="container">
+                <h2 class="section-title">You Might Also Like</h2>
+                <div class="products-grid" id="recommendedProducts">
+                    <!-- Recommended products will be rendered here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <h3>Free Shipping</h3>
+                        <p>On orders over €75</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">↩️</div>
+                        <h3>Easy Returns</h3>
+                        <p>60-day return policy</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🔒</div>
+                        <h3>Secure Payment</h3>
+                        <p>174+ payment methods</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💬</div>
+                        <h3>24/7 Support</h3>
+                        <p>Live chat & email support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About DANHAYS</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/shipping">Shipping Info</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms">Terms of Service</a></li>
+                        <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhaysbeauty" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@danhaysbeauty" target="_blank">TikTok</a>
+                        <a href="https://youtube.com/danhaysbeauty" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/danhaysbeauty" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 🌍</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/cart.js"></script>
+</body>
+</html>
