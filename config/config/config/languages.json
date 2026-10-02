@@ -1,0 +1,229 @@
+{
+    "languages": {
+        "default": "en",
+        "available": [
+            {
+                "code": "en",
+                "name": "English",
+                "nativeName": "English",
+                "direction": "ltr",
+                "region": "International",
+                "flag": "🌍",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "en-GB",
+                "enabled": true
+            },
+            {
+                "code": "nl",
+                "name": "Dutch",
+                "nativeName": "Nederlands",
+                "direction": "ltr",
+                "region": "European",
+                "flag": "🇳🇱",
+                "dateFormat": "DD-MM-YYYY",
+                "numberFormat": "nl-NL",
+                "enabled": true
+            },
+            {
+                "code": "fr",
+                "name": "French",
+                "nativeName": "Français",
+                "direction": "ltr",
+                "region": "European",
+                "flag": "🇫🇷",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "fr-FR",
+                "enabled": true
+            },
+            {
+                "code": "de",
+                "name": "German",
+                "nativeName": "Deutsch",
+                "direction": "ltr",
+                "region": "European",
+                "flag": "🇩🇪",
+                "dateFormat": "DD.MM.YYYY",
+                "numberFormat": "de-DE",
+                "enabled": true
+            },
+            {
+                "code": "es",
+                "name": "Spanish",
+                "nativeName": "Español",
+                "direction": "ltr",
+                "region": "European",
+                "flag": "🇪🇸",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "es-ES",
+                "enabled": true
+            },
+            {
+                "code": "pt",
+                "name": "Portuguese",
+                "nativeName": "Português",
+                "direction": "ltr",
+                "region": "European",
+                "flag": "🇵🇹",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "pt-PT",
+                "enabled": true
+            },
+            {
+                "code": "it",
+                "name": "Italian",
+                "nativeName": "Italiano",
+                "direction": "ltr",
+                "region": "European",
+                "flag": "🇮🇹",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "it-IT",
+                "enabled": true
+            },
+            {
+                "code": "sw",
+                "name": "Swahili",
+                "nativeName": "Kiswahili",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇰🇪",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "sw-KE",
+                "enabled": true
+            },
+            {
+                "code": "am",
+                "name": "Amharic",
+                "nativeName": "አማርኛ",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇪🇹",
+                "font": "Noto Sans Ethiopic",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "am-ET",
+                "enabled": true
+            },
+            {
+                "code": "ha",
+                "name": "Hausa",
+                "nativeName": "Hausa",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇳🇬",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "ha-NG",
+                "enabled": true
+            },
+            {
+                "code": "yo",
+                "name": "Yoruba",
+                "nativeName": "Yorùbá",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇳🇬",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "yo-NG",
+                "enabled": true
+            },
+            {
+                "code": "ig",
+                "name": "Igbo",
+                "nativeName": "Igbo",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇳🇬",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "ig-NG",
+                "enabled": true
+            },
+            {
+                "code": "zu",
+                "name": "Zulu",
+                "nativeName": "isiZulu",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇿🇦",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "zu-ZA",
+                "enabled": true
+            },
+            {
+                "code": "xh",
+                "name": "Xhosa",
+                "nativeName": "isiXhosa",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇿🇦",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "xh-ZA",
+                "enabled": true
+            },
+            {
+                "code": "af",
+                "name": "Afrikaans",
+                "nativeName": "Afrikaans",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇿🇦",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "af-ZA",
+                "enabled": true
+            },
+            {
+                "code": "ar",
+                "name": "Arabic",
+                "nativeName": "العربية",
+                "direction": "rtl",
+                "region": "Arabic",
+                "flag": "🇸🇦",
+                "font": "Noto Sans Arabic",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "ar-SA",
+                "enabled": true
+            },
+            {
+                "code": "wo",
+                "name": "Wolof",
+                "nativeName": "Wolof",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇸🇳",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "wo-SN",
+                "enabled": true
+            },
+            {
+                "code": "rw",
+                "name": "Kinyarwanda",
+                "nativeName": "Kinyarwanda",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇷🇼",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "rw-RW",
+                "enabled": true
+            },
+            {
+                "code": "lg",
+                "name": "Luganda",
+                "nativeName": "Luganda",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇺🇬",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "lg-UG",
+                "enabled": true
+            },
+            {
+                "code": "so",
+                "name": "Somali",
+                "nativeName": "Soomaali",
+                "direction": "ltr",
+                "region": "African",
+                "flag": "🇸🇴",
+                "dateFormat": "DD/MM/YYYY",
+                "numberFormat": "so-SO",
+                "enabled": true
+            }
+        ]
+    }
+}
