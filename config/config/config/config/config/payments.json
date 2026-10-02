@@ -1,0 +1,135 @@
+{
+    "payments": {
+        "processors": {
+            "primary": "stripe",
+            "fallback": "adyen"
+        },
+        "methods": {
+            "cards": {
+                "enabled": true,
+                "types": ["visa", "mastercard", "amex", "discover", "diners", "jcb", "unionpay"],
+                "processor": "stripe",
+                "icon": "/images/payments/cards.svg"
+            },
+            "paypal": {
+                "enabled": true,
+                "processor": "paypal",
+                "icon": "/images/payments/paypal.svg",
+                "expressCheckout": true
+            },
+            "applePay": {
+                "enabled": true,
+                "processor": "stripe",
+                "icon": "/images/payments/apple-pay.svg",
+                "expressCheckout": true,
+                "supportedNetworks": ["visa", "mastercard", "amex"]
+            },
+            "googlePay": {
+                "enabled": true,
+                "processor": "stripe",
+                "icon": "/images/payments/google-pay.svg",
+                "expressCheckout": true
+            },
+            "klarna": {
+                "enabled": true,
+                "processor": "klarna",
+                "icon": "/images/payments/klarna.svg",
+                "options": ["pay_later", "pay_over_time", "pay_now"],
+                "minAmount": 35,
+                "maxAmount": 1500,
+                "countries": ["BE", "NL", "DE", "AT", "SE", "NO", "FI", "DK", "GB", "US"]
+            },
+            "afterpay": {
+                "enabled": true,
+                "processor": "afterpay",
+                "icon": "/images/payments/afterpay.svg",
+                "installments": 4,
+                "minAmount": 35,
+                "maxAmount": 1000,
+                "countries": ["GB", "US", "AU", "NZ"]
+            },
+            "ideal": {
+                "enabled": true,
+                "processor": "stripe",
+                "icon": "/images/payments/ideal.svg",
+                "countries": ["NL"]
+            },
+            "bancontact": {
+                "enabled": true,
+                "processor": "stripe",
+                "icon": "/images/payments/bancontact.svg",
+                "countries": ["BE"]
+            },
+            "sofort": {
+                "enabled": true,
+                "processor": "stripe",
+                "icon": "/images/payments/sofort.svg",
+                "countries": ["DE", "AT", "BE", "NL"]
+            },
+            "giropay": {
+                "enabled": true,
+                "processor": "stripe",
+                "icon": "/images/payments/giropay.svg",
+                "countries": ["DE"]
+            },
+            "eps": {
+                "enabled": true,
+                "processor": "stripe",
+                "icon": "/images/payments/eps.svg",
+                "countries": ["AT"]
+            },
+            "mpesa": {
+                "enabled": true,
+                "processor": "flutterwave",
+                "icon": "/images/payments/mpesa.svg",
+                "countries": ["KE", "TZ", "UG", "RW", "CD"]
+            },
+            "paystack": {
+                "enabled": true,
+                "processor": "paystack",
+                "icon": "/images/payments/paystack.svg",
+                "countries": ["NG", "GH", "ZA", "KE"]
+            },
+            "flutterwave": {
+                "enabled": true,
+                "processor": "flutterwave",
+                "icon": "/images/payments/flutterwave.svg",
+                "countries": ["NG", "GH", "KE", "ZA", "TZ", "UG", "RW", "CI", "CM", "SN"]
+            },
+            "orangeMoney": {
+                "enabled": true,
+                "processor": "flutterwave",
+                "icon": "/images/payments/orange-money.svg",
+                "countries": ["SN", "CI", "CM", "ML", "GN", "BF", "NE"]
+            },
+            "mtn": {
+                "enabled": true,
+                "processor": "flutterwave",
+                "icon": "/images/payments/mtn.svg",
+                "countries": ["GH", "UG", "RW", "ZM", "CI", "CM", "BJ"]
+            },
+            "giftCard": {
+                "enabled": true,
+                "processor": "internal",
+                "icon": "/images/payments/gift-card.svg"
+            },
+            "storeCredit": {
+                "enabled": true,
+                "processor": "internal",
+                "icon": "/images/payments/store-credit.svg"
+            },
+            "rewardsPoints": {
+                "enabled": true,
+                "processor": "internal",
+                "icon": "/images/payments/rewards.svg",
+                "minPoints": 100
+            }
+        },
+        "security": {
+            "3dsEnabled": true,
+            "fraudDetection": true,
+            "pciCompliant": true,
+            "addressVerification": true
+        }
+    }
+}
