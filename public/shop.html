@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Shop | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="Shop 2500+ beauty products from 50+ brands. Foundation, makeup, skincare & haircare for melanin-rich skin.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danhays.com/shop">
+    <meta property="og:title" content="Shop | DANHAYS">
+    <meta property="og:description" content="Shop 2500+ beauty products from 50+ brands.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/variables.css">
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/components.css">
+    <link rel="stylesheet" href="/src/css/shop.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading DANHAYS...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="left">
+                        <p>Welcome to DANHAYS - The Home of Melanin Beauty</p>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="link">Track Order</a>
+                        <span>|</span>
+                        <a href="#" class="link">Help Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="/" class="logo-link">
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <nav class="nav-main">
+                        <ul class="nav-list">
+                            <li><a href="/shop?category=face" class="nav-link">Face</a></li>
+                            <li><a href="/shop?category=eyes" class="nav-link">Eyes</a></li>
+                            <li><a href="/shop?category=lips" class="nav-link">Lips</a></li>
+                            <li><a href="/shop?category=skincare" class="nav-link">Skincare</a></li>
+                            <li><a href="/shop?category=haircare" class="nav-link">Haircare</a></li>
+                            <li><a href="/brands" class="nav-link">Brands</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-icons">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <span>🔍</span>
+                        </button>
+                        <a href="/account" class="icon-btn">
+                            <span>👤</span>
+                        </a>
+                        <a href="/wishlist" class="icon-btn">
+                            <span>❤️</span>
+                        </a>
+                        <a href="/cart" class="icon-btn cart-btn">
+                            <span>🛒</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 id="pageTitle">Shop All Products</h1>
+                <p id="pageSubtitle" class="text-muted">Explore our complete collection</p>
+                
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>/</span>
+                    <a href="/shop">Shop</a>
+                    <span>/</span>
+                    <span id="breadcrumbCategory">All Products</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section class="shop-section">
+            <div class="container">
+                <div class="shop-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="shop-sidebar">
+                        <div class="filters-wrapper">
+                            <!-- Category Filter -->
+                            <div class="filter-group">
+                                <h3 class="filter-title">Categories</h3>
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="face">
+                                        <span>Face <span class="count">(650)</span></span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="eyes">
+                                        <span>Eyes <span class="count">(520)</span></span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="lips">
+                                        <span>Lips <span class="count">(480)</span></span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="skincare">
+                                        <span>Skincare <span class="count">(420)</span></span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="haircare">
+                                        <span>Haircare <span class="count">(280)</span></span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="bodycare">
+                                        <span>Bodycare <span class="count">(180)</span></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Price Filter -->
+                            <div class="filter-group">
+                                <h3 class="filter-title">Price Range</h3>
+                                <div class="price-range">
+                                    <input type="range" id="priceMin" class="price-slider" min="0" max="500" value="0">
+                                    <input type="range" id="priceMax" class="price-slider" min="0" max="500" value="500">
+                                </div>
+                                <div class="price-display">
+                                    <span id="minPrice">€0</span> - <span id="maxPrice">€500</span>
+                                </div>
+                            </div>
+
+                            <!-- Brand Filter -->
+                            <div class="filter-group">
+                                <h3 class="filter-title">Brands</h3>
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="fenty">
+                                        <span>Fenty Beauty</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="black-opal">
+                                        <span>Black Opal</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="beautyy">
+                                        <span>Beautyy</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="black-up">
+                                        <span>Black Up</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="mac">
+                                        <span>MAC</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="nyx">
+                                        <span>NYX</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Rating Filter -->
+                            <div class="filter-group">
+                                <h3 class="filter-title">Rating</h3>
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="rating" value="5">
+                                        <span>⭐⭐⭐⭐⭐ 5 stars</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="rating" value="4">
+                                        <span>⭐⭐⭐⭐ 4+ stars</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="rating" value="3">
+                                        <span>⭐⭐⭐ 3+ stars</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Special Filters -->
+                            <div class="filter-group">
+                                <h3 class="filter-title">Special Offers</h3>
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="special" value="sale">
+                                        <span>On Sale</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="special" value="new">
+                                        <span>New Arrivals</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="special" value="bestseller">
+                                        <span>Best Sellers</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Clear Filters -->
+                            <button class="btn btn-outline w-full" id="clearFilters">Clear All Filters</button>
+                        </div>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <div class="shop-main">
+                        <!-- Top Bar -->
+                        <div class="shop-top-bar">
+                            <div class="shop-results">
+                                <span id="resultCount">Showing 0 products</span>
+                            </div>
+
+                            <div class="shop-controls">
+                                <!-- Sort -->
+                                <select id="sortSelect" class="sort-select">
+                                    <option value="popular">Popular</option>
+                                    <option value="newest">Newest</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Highest Rated</option>
+                                </select>
+
+                                <!-- View Toggle -->
+                                <div class="view-toggle">
+                                    <button class="view-btn active" data-view="grid-4" title="Grid view">
+                                        ⊞⊞
+                                    </button>
+                                    <button class="view-btn" data-view="grid-3" title="List view">
+                                        ⊟⊟
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="products-grid" id="productsGrid">
+                            <!-- Products will be loaded here -->
+                            <div class="loading-skeleton" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                                <p>Loading products...</p>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination" id="pagination">
+                            <!-- Pagination will be generated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <h3>Free Shipping</h3>
+                        <p>On orders over €75</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">↩️</div>
+                        <h3>Easy Returns</h3>
+                        <p>60-day return policy</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🔒</div>
+                        <h3>Secure Payment</h3>
+                        <p>174+ payment methods</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💬</div>
+                        <h3>24/7 Support</h3>
+                        <p>Live chat & email support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About DANHAYS</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/shipping">Shipping Info</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms">Terms of Service</a></li>
+                        <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhaysbeauty" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@danhaysbeauty" target="_blank">TikTok</a>
+                        <a href="https://youtube.com/danhaysbeauty" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/danhaysbeauty" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 🌍</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/shop.js"></script>
+</body>
+</html>
