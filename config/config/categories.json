@@ -1,0 +1,166 @@
+{
+    "categories": [
+        {
+            "id": "face",
+            "name": "Face",
+            "handle": "face",
+            "description": "Foundation, concealer, blush, bronzer, highlighter & more",
+            "icon": "icon-face",
+            "image": "/images/categories/face.jpg",
+            "color": "#E8D4B8",
+            "productCount": 650,
+            "featured": true,
+            "order": 1,
+            "subcategories": [
+                {"id": "foundation", "name": "Foundation", "handle": "foundation", "productCount": 180},
+                {"id": "concealer", "name": "Concealer", "handle": "concealer", "productCount": 85},
+                {"id": "powder", "name": "Powder", "handle": "powder", "productCount": 65},
+                {"id": "blush", "name": "Blush", "handle": "blush", "productCount": 90},
+                {"id": "bronzer", "name": "Bronzer", "handle": "bronzer", "productCount": 55},
+                {"id": "highlighter", "name": "Highlighter", "handle": "highlighter", "productCount": 70},
+                {"id": "contour", "name": "Contour", "handle": "contour", "productCount": 45},
+                {"id": "primer", "name": "Primer", "handle": "primer", "productCount": 60},
+                {"id": "setting-spray", "name": "Setting Spray", "handle": "setting-spray", "productCount": 40}
+            ]
+        },
+        {
+            "id": "eyes",
+            "name": "Eyes",
+            "handle": "eyes",
+            "description": "Eyeshadow, mascara, eyeliner, brows & more",
+            "icon": "icon-eye",
+            "image": "/images/categories/eyes.jpg",
+            "color": "#C9A86C",
+            "productCount": 520,
+            "featured": true,
+            "order": 2,
+            "subcategories": [
+                {"id": "eyeshadow", "name": "Eyeshadow", "handle": "eyeshadow", "productCount": 145},
+                {"id": "eyeshadow-palettes", "name": "Eyeshadow Palettes", "handle": "eyeshadow-palettes", "productCount": 85},
+                {"id": "mascara", "name": "Mascara", "handle": "mascara", "productCount": 65},
+                {"id": "eyeliner", "name": "Eyeliner", "handle": "eyeliner", "productCount": 75},
+                {"id": "brows", "name": "Brows", "handle": "brows", "productCount": 80},
+                {"id": "false-lashes", "name": "False Lashes", "handle": "false-lashes", "productCount": 50},
+                {"id": "eye-primer", "name": "Eye Primer", "handle": "eye-primer", "productCount": 20}
+            ]
+        },
+        {
+            "id": "lips",
+            "name": "Lips",
+            "handle": "lips",
+            "description": "Lipstick, lip gloss, lip liner & more",
+            "icon": "icon-lips",
+            "image": "/images/categories/lips.jpg",
+            "color": "#B85C5C",
+            "productCount": 480,
+            "featured": true,
+            "order": 3,
+            "subcategories": [
+                {"id": "lipstick", "name": "Lipstick", "handle": "lipstick", "productCount": 165},
+                {"id": "liquid-lipstick", "name": "Liquid Lipstick", "handle": "liquid-lipstick", "productCount": 85},
+                {"id": "lip-gloss", "name": "Lip Gloss", "handle": "lip-gloss", "productCount": 90},
+                {"id": "lip-liner", "name": "Lip Liner", "handle": "lip-liner", "productCount": 70},
+                {"id": "lip-balm", "name": "Lip Balm", "handle": "lip-balm", "productCount": 45},
+                {"id": "lip-care", "name": "Lip Care", "handle": "lip-care", "productCount": 25}
+            ]
+        },
+        {
+            "id": "skincare",
+            "name": "Skincare",
+            "handle": "skincare",
+            "description": "Cleansers, moisturizers, serums, masks & more",
+            "icon": "icon-skincare",
+            "image": "/images/categories/skincare.jpg",
+            "color": "#A8D5BA",
+            "productCount": 420,
+            "featured": true,
+            "order": 4,
+            "subcategories": [
+                {"id": "cleansers", "name": "Cleansers", "handle": "cleansers", "productCount": 65},
+                {"id": "moisturizers", "name": "Moisturizers", "handle": "moisturizers", "productCount": 80},
+                {"id": "serums", "name": "Serums", "handle": "serums", "productCount": 75},
+                {"id": "masks", "name": "Masks", "handle": "masks", "productCount": 50},
+                {"id": "toners", "name": "Toners", "handle": "toners", "productCount": 40},
+                {"id": "eye-care", "name": "Eye Care", "handle": "eye-care", "productCount": 35},
+                {"id": "sunscreen", "name": "Sunscreen", "handle": "sunscreen", "productCount": 45},
+                {"id": "treatments", "name": "Treatments", "handle": "treatments", "productCount": 30}
+            ]
+        },
+        {
+            "id": "haircare",
+            "name": "Haircare",
+            "handle": "haircare",
+            "description": "Shampoo, conditioner, styling, treatments & more",
+            "icon": "icon-hair",
+            "image": "/images/categories/haircare.jpg",
+            "color": "#8B7355",
+            "productCount": 280,
+            "featured": true,
+            "order": 5,
+            "subcategories": [
+                {"id": "shampoo", "name": "Shampoo", "handle": "shampoo", "productCount": 55},
+                {"id": "conditioner", "name": "Conditioner", "handle": "conditioner", "productCount": 50},
+                {"id": "hair-masks", "name": "Hair Masks", "handle": "hair-masks", "productCount": 40},
+                {"id": "styling", "name": "Styling", "handle": "styling", "productCount": 65},
+                {"id": "oils-serums", "name": "Oils & Serums", "handle": "oils-serums", "productCount": 45},
+                {"id": "treatments", "name": "Treatments", "handle": "hair-treatments", "productCount": 25}
+            ]
+        },
+        {
+            "id": "bodycare",
+            "name": "Bodycare",
+            "handle": "bodycare",
+            "description": "Body lotion, body wash, scrubs & more",
+            "icon": "icon-body",
+            "image": "/images/categories/bodycare.jpg",
+            "color": "#DEB887",
+            "productCount": 180,
+            "featured": false,
+            "order": 6,
+            "subcategories": [
+                {"id": "body-lotion", "name": "Body Lotion", "handle": "body-lotion", "productCount": 50},
+                {"id": "body-wash", "name": "Body Wash", "handle": "body-wash", "productCount": 35},
+                {"id": "body-scrubs", "name": "Body Scrubs", "handle": "body-scrubs", "productCount": 30},
+                {"id": "body-oils", "name": "Body Oils", "handle": "body-oils", "productCount": 40},
+                {"id": "hand-care", "name": "Hand Care", "handle": "hand-care", "productCount": 25}
+            ]
+        },
+        {
+            "id": "tools",
+            "name": "Tools & Brushes",
+            "handle": "tools",
+            "description": "Makeup brushes, sponges, tools & accessories",
+            "icon": "icon-tools",
+            "image": "/images/categories/tools.jpg",
+            "color": "#A9A9A9",
+            "productCount": 150,
+            "featured": false,
+            "order": 7,
+            "subcategories": [
+                {"id": "face-brushes", "name": "Face Brushes", "handle": "face-brushes", "productCount": 35},
+                {"id": "eye-brushes", "name": "Eye Brushes", "handle": "eye-brushes", "productCount": 30},
+                {"id": "brush-sets", "name": "Brush Sets", "handle": "brush-sets", "productCount": 25},
+                {"id": "sponges", "name": "Sponges & Applicators", "handle": "sponges", "productCount": 20},
+                {"id": "tools-accessories", "name": "Tools & Accessories", "handle": "tools-accessories", "productCount": 40}
+            ]
+        },
+        {
+            "id": "gifts",
+            "name": "Sets & Gifts",
+            "handle": "gifts",
+            "description": "Gift sets, value sets, limited editions",
+            "icon": "icon-gift",
+            "image": "/images/categories/gifts.jpg",
+            "color": "#D4AF37",
+            "productCount": 120,
+            "featured": true,
+            "order": 8,
+            "subcategories": [
+                {"id": "gift-sets", "name": "Gift Sets", "handle": "gift-sets", "productCount": 45},
+                {"id": "value-sets", "name": "Value Sets", "handle": "value-sets", "productCount": 35},
+                {"id": "limited-edition", "name": "Limited Edition", "handle": "limited-edition", "productCount": 25},
+                {"id": "travel-size", "name": "Travel Size", "handle": "travel-size", "productCount": 15}
+            ]
+        }
+    ]
+}
