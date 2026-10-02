@@ -1,0 +1,201 @@
+{
+    "business": {
+        "name": "DANHAYS",
+        "legalName": "DANHAYS BV",
+        "tagline": "The Home of Melanin Beauty",
+        "description": "Multi-brand curated marketplace for Black & Brown beauty",
+        "mission": "To celebrate and serve melanin-rich skin with the world's best curated beauty products",
+        "vision": "To become the global destination for inclusive beauty",
+        "founded": 2026,
+        "registrationNumber": "BE0123456789",
+        "vatNumber": "BE0123456789",
+        "address": {
+            "street": "123 Rue de la Beauté",
+            "city": "Brussels",
+            "region": "Brussels-Capital",
+            "postalCode": "1000",
+            "country": "Belgium",
+            "countryCode": "BE"
+        },
+        "coordinates": {
+            "lat": 50.8503,
+            "lng": 4.3517
+        },
+        "contact": {
+            "phone": "+32-2-123-4567",
+            "phoneFormatted": "+32 2 123 45 67",
+            "email": "hello@danhays.com",
+            "supportEmail": "support@danhays.com",
+            "pressEmail": "press@danhays.com",
+            "proEmail": "pro@danhays.com",
+            "wholesaleEmail": "wholesale@danhays.com",
+            "partnersEmail": "partners@danhays.com",
+            "careersEmail": "careers@danhays.com"
+        },
+        "hours": {
+            "customerService": {
+                "weekdays": "09:00-21:00",
+                "saturday": "10:00-18:00",
+                "sunday": "12:00-18:00",
+                "timezone": "CET"
+            },
+            "liveChat": "24/7",
+            "headquarters": {
+                "weekdays": "09:00-18:00",
+                "saturday": "10:00-17:00",
+                "sunday": "Closed"
+            }
+        }
+    },
+    "platform": {
+        "brandCount": 50,
+        "productCount": 2500,
+        "shadeCount": 500,
+        "categoryCount": 8,
+        "subcategoryCount": 45,
+        "languageCount": 51,
+        "africanLanguages": 38,
+        "europeanLanguages": 13,
+        "paymentMethods": 174,
+        "currencyCount": 11,
+        "storePartners": 25,
+        "countriesServed": 190,
+        "communityMembers": 500000,
+        "creatorCount": 5000,
+        "proMembers": 15000,
+        "reviewCount": 125000,
+        "questionCount": 45000,
+        "ugcCount": 250000,
+        "rating": 4.9,
+        "shadeMatchAccuracy": 98,
+        "returnRate": 2.5,
+        "customerSatisfaction": 97
+    },
+    "shipping": {
+        "freeThreshold": 75,
+        "freeThresholdPro": 50,
+        "currency": "EUR",
+        "returnDays": 60,
+        "returnDaysPro": 90,
+        "methods": {
+            "standard": {
+                "name": "Standard Shipping",
+                "days": "3-7",
+                "price": 4.95,
+                "freeOver": 75
+            },
+            "express": {
+                "name": "Express Shipping",
+                "days": "1-3",
+                "price": 9.95,
+                "freeOver": 150
+            },
+            "sameDay": {
+                "name": "Same-Day Delivery",
+                "days": "0",
+                "price": 14.95,
+                "cutoffTime": "14:00",
+                "availableCities": ["Brussels", "Antwerp", "Ghent", "Liège"]
+            },
+            "clickCollect": {
+                "name": "Click & Collect",
+                "days": "1-2",
+                "price": 0,
+                "freeOver": 0
+            }
+        },
+        "carriers": ["DHL", "PostNL", "bpost", "UPS", "FedEx", "DPD", "GLS"]
+    },
+    "rewards": {
+        "programName": "Melanin Rewards",
+        "pointsPerEuro": 1,
+        "pointsPerReview": 50,
+        "pointsPerPhoto": 100,
+        "pointsPerReferral": 500,
+        "pointsPerBirthday": 200,
+        "pointValue": 0.01,
+        "tiers": [
+            {
+                "name": "Bronze",
+                "threshold": 0,
+                "multiplier": 1,
+                "benefits": ["Earn 1 point per €1", "Birthday gift", "Early access to sales"]
+            },
+            {
+                "name": "Silver",
+                "threshold": 200,
+                "multiplier": 1.25,
+                "benefits": ["Earn 1.25 points per €1", "Free standard shipping", "Exclusive samples"]
+            },
+            {
+                "name": "Gold",
+                "threshold": 500,
+                "multiplier": 1.5,
+                "benefits": ["Earn 1.5 points per €1", "Free express shipping", "Early access to launches", "Exclusive events"]
+            },
+            {
+                "name": "Diamond",
+                "threshold": 1000,
+                "multiplier": 2,
+                "benefits": ["Earn 2 points per €1", "Free same-day delivery", "Personal beauty advisor", "VIP events", "Annual gift box"]
+            }
+        ]
+    },
+    "social": {
+        "instagram": {"handle": "danhaysbeauty", "url": "https://instagram.com/danhaysbeauty", "followers": 850000},
+        "tiktok": {"handle": "danhaysbeauty", "url": "https://tiktok.com/@danhaysbeauty", "followers": 1200000},
+        "youtube": {"handle": "DANHAYSBeauty", "url": "https://youtube.com/c/DANHAYSBeauty", "subscribers": 450000},
+        "facebook": {"handle": "danhaysbeauty", "url": "https://facebook.com/danhaysbeauty", "followers": 320000},
+        "twitter": {"handle": "danhaysbeauty", "url": "https://twitter.com/danhaysbeauty", "followers": 180000},
+        "pinterest": {"handle": "danhaysbeauty", "url": "https://pinterest.com/danhaysbeauty", "followers": 275000},
+        "linkedin": {"handle": "danhays", "url": "https://linkedin.com/company/danhays", "followers": 25000},
+        "threads": {"handle": "danhaysbeauty", "url": "https://threads.net/@danhaysbeauty", "followers": 95000},
+        "snapchat": {"handle": "danhaysbeauty", "url": "https://snapchat.com/add/danhaysbeauty"},
+        "whatsapp": {"number": "+32470123456", "url": "https://wa.me/32470123456"}
+    },
+    "apps": {
+        "ios": {"id": "id123456789", "url": "https://apps.apple.com/app/danhays/id123456789", "minVersion": "14.0", "currentVersion": "2.5.0"},
+        "android": {"id": "com.danhays.app", "url": "https://play.google.com/store/apps/details?id=com.danhays.app", "minVersion": "8.0", "currentVersion": "2.5.0"},
+        "deepLinkScheme": "danhays://",
+        "universalLinkDomain": "www.danhays.com"
+    },
+    "legal": {
+        "privacyPolicyUrl": "/legal/privacy-policy",
+        "termsUrl": "/legal/terms-of-service",
+        "cookiePolicyUrl": "/legal/cookie-policy",
+        "accessibilityUrl": "/legal/accessibility",
+        "returnsUrl": "/help/returns",
+        "shippingPolicyUrl": "/help/shipping",
+        "gdprUrl": "/legal/gdpr",
+        "ccpaUrl": "/legal/ccpa",
+        "dataRetentionDays": 730,
+        "cookieConsentRequired": true,
+        "ageVerificationRequired": false,
+        "minimumAge": 13
+    },
+    "seo": {
+        "defaultTitle": "DANHAYS | The Home of Melanin Beauty",
+        "titleSeparator": " | ",
+        "defaultDescription": "Discover 2500+ curated beauty products from 50+ brands made for melanin-rich skin.",
+        "defaultImage": "https://cdn.danhays.com/images/og/og-default.jpg",
+        "twitterHandle": "@danhaysbeauty",
+        "locale": "en_US"
+    },
+    "cdn": {
+        "baseUrl": "https://cdn.danhays.com",
+        "imagesUrl": "https://cdn.danhays.com/images",
+        "videosUrl": "https://cdn.danhays.com/videos",
+        "fontsUrl": "https://cdn.danhays.com/fonts",
+        "staticUrl": "https://static.danhays.com"
+    },
+    "api": {
+        "baseUrl": "https://api.danhays.com",
+        "version": "v2",
+        "graphqlEndpoint": "https://api.danhays.com/graphql",
+        "websocketUrl": "wss://ws.danhays.com"
+    },
+    "version": "3.0.0",
+    "environment": "production",
+    "buildDate": "2026-01-15T00:00:00Z",
+    "lastUpdated": "2026-01-15T00:00:00Z"
+}
