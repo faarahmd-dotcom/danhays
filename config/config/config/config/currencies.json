@@ -1,0 +1,139 @@
+{
+    "currencies": {
+        "default": "EUR",
+        "available": [
+            {
+                "code": "EUR",
+                "name": "Euro",
+                "symbol": "€",
+                "symbolPosition": "before",
+                "decimalSeparator": ",",
+                "thousandSeparator": ".",
+                "decimals": 2,
+                "rate": 1,
+                "countries": ["BE", "NL", "DE", "FR", "IT", "ES", "PT", "AT", "IE", "FI"],
+                "enabled": true
+            },
+            {
+                "code": "GBP",
+                "name": "British Pound",
+                "symbol": "£",
+                "symbolPosition": "before",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 2,
+                "rate": 0.86,
+                "countries": ["GB"],
+                "enabled": true
+            },
+            {
+                "code": "USD",
+                "name": "US Dollar",
+                "symbol": "$",
+                "symbolPosition": "before",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 2,
+                "rate": 1.09,
+                "countries": ["US"],
+                "enabled": true
+            },
+            {
+                "code": "ZAR",
+                "name": "South African Rand",
+                "symbol": "R",
+                "symbolPosition": "before",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 2,
+                "rate": 20.50,
+                "countries": ["ZA"],
+                "enabled": true
+            },
+            {
+                "code": "NGN",
+                "name": "Nigerian Naira",
+                "symbol": "₦",
+                "symbolPosition": "before",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 2,
+                "rate": 850.00,
+                "countries": ["NG"],
+                "enabled": true
+            },
+            {
+                "code": "KES",
+                "name": "Kenyan Shilling",
+                "symbol": "KSh",
+                "symbolPosition": "before",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 2,
+                "rate": 155.00,
+                "countries": ["KE"],
+                "enabled": true
+            },
+            {
+                "code": "GHS",
+                "name": "Ghanaian Cedi",
+                "symbol": "GH₵",
+                "symbolPosition": "before",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 2,
+                "rate": 12.50,
+                "countries": ["GH"],
+                "enabled": true
+            },
+            {
+                "code": "EGP",
+                "name": "Egyptian Pound",
+                "symbol": "E£",
+                "symbolPosition": "before",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 2,
+                "rate": 33.75,
+                "countries": ["EG"],
+                "enabled": true
+            },
+            {
+                "code": "MAD",
+                "name": "Moroccan Dirham",
+                "symbol": "MAD",
+                "symbolPosition": "after",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 2,
+                "rate": 10.85,
+                "countries": ["MA"],
+                "enabled": true
+            },
+            {
+                "code": "XOF",
+                "name": "West African CFA Franc",
+                "symbol": "CFA",
+                "symbolPosition": "after",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 0,
+                "rate": 655.96,
+                "countries": ["SN", "CI", "BF", "ML", "NE", "TG", "BJ", "GW"],
+                "enabled": true
+            },
+            {
+                "code": "XAF",
+                "name": "Central African CFA Franc",
+                "symbol": "FCFA",
+                "symbolPosition": "after",
+                "decimalSeparator": ".",
+                "thousandSeparator": ",",
+                "decimals": 0,
+                "rate": 655.96,
+                "countries": ["CM", "CF", "TD", "CG", "GQ", "GA"],
+                "enabled": true
+            }
+        ]
+    }
+}
