@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title id="productTitle">Product | DANHAYS</title>
+    <meta name="description" id="productDescription" content="Shop at DANHAYS">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" id="ogUrl" content="https://danhays.com/product">
+    <meta property="og:title" id="ogTitle" content="Product | DANHAYS">
+    <meta property="og:description" id="ogDescription" content="Shop at DANHAYS">
+    <meta property="og:image" id="ogImage" content="https://via.placeholder.com/300x300">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/variables.css">
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/components.css">
+    <link rel="stylesheet" href="/src/css/product.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading product...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="left">
+                        <p>Welcome to DANHAYS - The Home of Melanin Beauty</p>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="link">Track Order</a>
+                        <span>|</span>
+                        <a href="#" class="link">Help Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="/" class="logo-link">
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <nav class="nav-main">
+                        <ul class="nav-list">
+                            <li><a href="/shop?category=face" class="nav-link">Face</a></li>
+                            <li><a href="/shop?category=eyes" class="nav-link">Eyes</a></li>
+                            <li><a href="/shop?category=lips" class="nav-link">Lips</a></li>
+                            <li><a href="/shop?category=skincare" class="nav-link">Skincare</a></li>
+                            <li><a href="/shop?category=haircare" class="nav-link">Haircare</a></li>
+                            <li><a href="/brands" class="nav-link">Brands</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-icons">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <span>🔍</span>
+                        </button>
+                        <a href="/account" class="icon-btn">
+                            <span>👤</span>
+                        </a>
+                        <a href="/wishlist" class="icon-btn">
+                            <span>❤️</span>
+                        </a>
+                        <a href="/cart" class="icon-btn cart-btn">
+                            <span>🛒</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>/</span>
+                    <a href="/shop">Shop</a>
+                    <span>/</span>
+                    <span id="breadcrumbCategory">Product</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Product Section -->
+        <section class="product-section">
+            <div class="container">
+                <div class="product-layout">
+                    <!-- Product Gallery -->
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img id="mainImage" src="https://via.placeholder.com/600x600?text=Product+Image" alt="Product">
+                            <div class="image-badge" id="imageBadge" style="display: none;"></div>
+                        </div>
+                        <div class="thumbnail-images">
+                            <div class="thumbnail active" onclick="product.changeImage(this)">
+                                <img src="https://via.placeholder.com/100x100?text=Img+1" alt="Thumbnail 1">
+                            </div>
+                            <div class="thumbnail" onclick="product.changeImage(this)">
+                                <img src="https://via.placeholder.com/100x100?text=Img+2" alt="Thumbnail 2">
+                            </div>
+                            <div class="thumbnail" onclick="product.changeImage(this)">
+                                <img src="https://via.placeholder.com/100x100?text=Img+3" alt="Thumbnail 3">
+                            </div>
+                            <div class="thumbnail" onclick="product.changeImage(this)">
+                                <img src="https://via.placeholder.com/100x100?text=Img+4" alt="Thumbnail 4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Details -->
+                    <div class="product-details">
+                        <!-- Header -->
+                        <div class="product-header">
+                            <div class="brand-rating">
+                                <p class="product-brand" id="productBrand">Brand Name</p>
+                                <div class="rating-section">
+                                    <div class="stars" id="productStars">★★★★★</div>
+                                    <span class="reviews-count" id="productReviews">(0 reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Title & Price -->
+                        <h1 class="product-title" id="productName">Product Name</h1>
+                        
+                        <div class="price-section">
+                            <span class="price-current" id="productPrice">€0.00</span>
+                            <span class="price-original" id="originalPrice" style="display: none;">€0.00</span>
+                            <span class="price-discount" id="discountBadge" style="display: none;"></span>
+                        </div>
+
+                        <!-- Stock Status -->
+                        <div class="stock-status" id="stockStatus">
+                            <span class="in-stock">✓ In Stock</span>
+                        </div>
+
+                        <!-- Options -->
+                        <div class="product-options">
+                            <!-- Size/Shade Selector -->
+                            <div class="option-group">
+                                <label class="option-label">Size / Shade</label>
+                                <div class="option-values" id="shadeOptions">
+                                    <button class="option-value active" onclick="product.selectOption(this)">Standard</button>
+                                    <button class="option-value" onclick="product.selectOption(this)">Large</button>
+                                    <button class="option-value" onclick="product.selectOption(this)">Travel Size</button>
+                                </div>
+                            </div>
+
+                            <!-- Quantity Selector -->
+                            <div class="option-group">
+                                <label class="option-label">Quantity</label>
+                                <div class="quantity-selector">
+                                    <button class="qty-btn" onclick="product.decreaseQty()">−</button>
+                                    <input type="number" id="quantity" class="qty-input" value="1" min="1" max="99">
+                                    <button class="qty-btn" onclick="product.increaseQty()">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="product-actions-main">
+                            <button class="btn btn-primary btn-large" id="addToCartBtn" onclick="product.addToCart()">
+                                Add to Cart
+                            </button>
+                            <button class="btn btn-outline btn-large" id="addToWishlistBtn" onclick="product.addToWishlist()">
+                                ♡ Wishlist
+                            </button>
+                        </div>
+
+                        <!-- Shipping Info -->
+                        <div class="shipping-info">
+                            <div class="info-item">
+                                <span class="info-icon">🚚</span>
+                                <div>
+                                    <p class="info-title">Free Shipping</p>
+                                    <p class="info-text">On orders over €75</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon">↩️</span>
+                                <div>
+                                    <p class="info-title">Easy Returns</p>
+                                    <p class="info-text">60-day return window</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon">🔒</span>
+                                <div>
+                                    <p class="info-title">Secure Checkout</p>
+                                    <p class="info-text">174+ payment methods</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Share -->
+                        <div class="share-section">
+                            <p>Share:</p>
+                            <a href="#" class="share-btn" title="Share on Facebook">f</a>
+                            <a href="#" class="share-btn" title="Share on Twitter">𝕏</a>
+                            <a href="#" class="share-btn" title="Share on Instagram">📸</a>
+                            <a href="#" class="share-btn" title="Copy Link">🔗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabs Section -->
+        <section class="product-tabs-section">
+            <div class="container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="ingredients">Ingredients</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                    <button class="tab-btn" data-tab="qa">Q&A</button>
+                </div>
+
+                <!-- Description Tab -->
+                <div class="tab-content active" id="description-tab">
+                    <h2>Product Details</h2>
+                    <div id="productDescriptionContent">
+                        <p>This is a premium beauty product designed for melanin-rich skin. It provides excellent coverage and a natural finish.</p>
+                    </div>
+                </div>
+
+                <!-- Ingredients Tab -->
+                <div class="tab-content" id="ingredients-tab">
+                    <h2>Ingredients</h2>
+                    <div id="ingredientsContent">
+                        <ul>
+                            <li>Water</li>
+                            <li>Glycerin</li>
+                            <li>Natural Extracts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div class="tab-content" id="reviews-tab">
+                    <div class="reviews-section">
+                        <h2>Customer Reviews</h2>
+                        
+                        <!-- Review Summary -->
+                        <div class="review-summary">
+                            <div class="rating-box">
+                                <div class="rating-number" id="ratingNumber">4.8</div>
+                                <div class="rating-stars" id="summarystars">★★★★★</div>
+                                <p id="totalReviews">1,250 reviews</p>
+                            </div>
+
+                            <!-- Rating Distribution -->
+                            <div class="rating-distribution">
+                                <div class="distribution-row">
+                                    <span>5 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 80%;"></div>
+                                    </div>
+                                    <span>70%</span>
+                                </div>
+                                <div class="distribution-row">
+                                    <span>4 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 15%;"></div>
+                                    </div>
+                                    <span>15%</span>
+                                </div>
+                                <div class="distribution-row">
+                                    <span>3 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 10%;"></div>
+                                    </div>
+                                    <span>10%</span>
+                                </div>
+                                <div class="distribution-row">
+                                    <span>2 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 3%;"></div>
+                                    </div>
+                                    <span>3%</span>
+                                </div>
+                                <div class="distribution-row">
+                                    <span>1 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 2%;"></div>
+                                    </div>
+                                    <span>2%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Write Review Button -->
+                        <button class="btn btn-secondary" onclick="product.openReviewForm()">Write a Review</button>
+
+                        <!-- Reviews List -->
+                        <div class="reviews-list" id="reviewsList">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <p class="reviewer-name">Sarah M.</p>
+                                        <div class="review-rating">★★★★★</div>
+                                    </div>
+                                    <p class="review-date">2 weeks ago</p>
+                                </div>
+                                <p class="review-title">Perfect shade match!</p>
+                                <p class="review-text">This foundation is amazing! The shade match is perfect for my skin tone and it lasts all day without feeling heavy.</p>
+                                <div class="review-actions">
+                                    <button class="review-btn">👍 Helpful (23)</button>
+                                    <button class="review-btn">👎 Not Helpful (2)</button>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <p class="reviewer-name">Amina K.</p>
+                                        <div class="review-rating">★★★★★</div>
+                                    </div>
+                                    <p class="review-date">1 month ago</p>
+                                </div>
+                                <p class="review-title">Highly recommend!</p>
+                                <p class="review-text">Been using this for 3 months now and I'm obsessed! Great coverage, doesn't clog pores, and the color selection is incredible.</p>
+                                <div class="review-actions">
+                                    <button class="review-btn">👍 Helpful (45)</button>
+                                    <button class="review-btn">👎 Not Helpful (1)</button>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <p class="reviewer-name">Joy T.</p>
+                                        <div class="review-rating">★★★★☆</div>
+                                    </div>
+                                    <p class="review-date">1.5 months ago</p>
+                                </div>
+                                <p class="review-title">Good but...</p>
+                                <p class="review-text">Great quality and shade range, but the packaging could be better. Still worth the price!</p>
+                                <div class="review-actions">
+                                    <button class="review-btn">👍 Helpful (12)</button>
+                                    <button class="review-btn">👎 Not Helpful (3)</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Load More -->
+                        <button class="btn btn-outline w-full mt-12">Load More Reviews</button>
+                    </div>
+                </div>
+
+                <!-- Q&A Tab -->
+                <div class="tab-content" id="qa-tab">
+                    <h2>Questions & Answers</h2>
+                    
+                    <button class="btn btn-secondary" onclick="product.openQAForm()">Ask a Question</button>
+
+                    <div class="qa-list" id="qaList">
+                        <div class="qa-item">
+                            <div class="qa-question">
+                                <p><strong>Q:</strong> What's the shelf life?</p>
+                                <p class="qa-date">Asked 3 weeks ago</p>
+                            </div>
+                            <div class="qa-answer">
+                                <p><strong>A:</strong> The shelf life is 3 years from the manufacturing date. Store in a cool, dry place.</p>
+                                <p class="qa-answerer">Answered by DANHAYS Support</p>
+                            </div>
+                        </div>
+
+                        <div class="qa-item">
+                            <div class="qa-question">
+                                <p><strong>Q:</strong> Is this suitable for sensitive skin?</p>
+                                <p class="qa-date">Asked 1 month ago</p>
+                            </div>
+                            <div class="qa-answer">
+                                <p><strong>A:</strong> This product is dermatologist-tested and suitable for sensitive skin. However, we recommend doing a patch test first.</p>
+                                <p class="qa-answerer">Answered by DANHAYS Support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="related-products-section">
+            <div class="container">
+                <h2 class="section-title">You May Also Like</h2>
+                <div class="products-grid" id="relatedProducts">
+                    <!-- Related products will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <h3>Free Shipping</h3>
+                        <p>On orders over €75</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">↩️</div>
+                        <h3>Easy Returns</h3>
+                        <p>60-day return policy</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🔒</div>
+                        <h3>Secure Payment</h3>
+                        <p>174+ payment methods</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💬</div>
+                        <h3>24/7 Support</h3>
+                        <p>Live chat & email support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About DANHAYS</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/shipping">Shipping Info</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms">Terms of Service</a></li>
+                        <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhaysbeauty" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@danhaysbeauty" target="_blank">TikTok</a>
+                        <a href="https://youtube.com/danhaysbeauty" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/danhaysbeauty" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 🌍</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/product.js"></script>
+</body>
+</html>
