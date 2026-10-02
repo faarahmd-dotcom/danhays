@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Order Confirmation | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="Your order has been confirmed. Thank you for shopping at DANHAYS!">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danhays.com/order-confirmation">
+    <meta property="og:title" content="Order Confirmation | DANHAYS">
+    <meta property="og:description" content="Your order has been confirmed!">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/variables.css">
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/components.css">
+    <link rel="stylesheet" href="/src/css/order-confirmation.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading order details...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="left">
+                        <p>Welcome to DANHAYS - The Home of Melanin Beauty</p>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="link">Track Order</a>
+                        <span>|</span>
+                        <a href="#" class="link">Help Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="/" class="logo-link">
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <nav class="nav-main">
+                        <ul class="nav-list">
+                            <li><a href="/shop?category=face" class="nav-link">Face</a></li>
+                            <li><a href="/shop?category=eyes" class="nav-link">Eyes</a></li>
+                            <li><a href="/shop?category=lips" class="nav-link">Lips</a></li>
+                            <li><a href="/shop?category=skincare" class="nav-link">Skincare</a></li>
+                            <li><a href="/shop?category=haircare" class="nav-link">Haircare</a></li>
+                            <li><a href="/brands" class="nav-link">Brands</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-icons">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <span>🔍</span>
+                        </button>
+                        <a href="/account" class="icon-btn">
+                            <span>👤</span>
+                        </a>
+                        <a href="/wishlist" class="icon-btn">
+                            <span>❤️</span>
+                        </a>
+                        <a href="/cart" class="icon-btn cart-btn">
+                            <span>🛒</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Confirmation Hero -->
+        <section class="confirmation-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="success-icon">✓</div>
+                    <h1>Thank You for Your Order!</h1>
+                    <p>Your order has been confirmed and will be processed shortly.</p>
+                    <div class="order-number">
+                        Order Number: <strong id="orderNumber">ORD-123456789</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirmation Section -->
+        <section class="confirmation-section">
+            <div class="container">
+                <div class="confirmation-layout">
+                    <!-- Main Content -->
+                    <div class="confirmation-main">
+                        <!-- Shipping Information -->
+                        <div class="info-card">
+                            <h2>Shipping Information</h2>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Name</label>
+                                    <p id="shippingName">John Doe</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Email</label>
+                                    <p id="shippingEmail">john@example.com</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Address</label>
+                                    <p id="shippingAddress">123 Rue de la Beauté<br>Brussels, 1000<br>Belgium</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Phone</label>
+                                    <p id="shippingPhone">+32 2 123 4567</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Billing Information -->
+                        <div class="info-card">
+                            <h2>Billing Information</h2>
+                            <div class="info-grid">
+                                <div class="info-item full">
+                                    <label>Address</label>
+                                    <p id="billingAddress">Same as shipping address</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Items -->
+                        <div class="info-card">
+                            <h2>Order Items</h2>
+                            <div class="order-items-table">
+                                <div class="table-header">
+                                    <div class="col-product">Product</div>
+                                    <div class="col-qty">Qty</div>
+                                    <div class="col-price">Price</div>
+                                    <div class="col-total">Total</div>
+                                </div>
+                                <div class="table-body" id="orderItemsTable">
+                                    <!-- Items will be rendered here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tracking Information -->
+                        <div class="info-card">
+                            <h2>Tracking Information</h2>
+                            <div class="tracking-info">
+                                <div class="tracking-item">
+                                    <div class="tracking-icon">📦</div>
+                                    <div class="tracking-content">
+                                        <h4>Order Confirmed</h4>
+                                        <p id="trackingDate1">2 January 2026</p>
+                                    </div>
+                                </div>
+                                <div class="tracking-divider"></div>
+                                <div class="tracking-item">
+                                    <div class="tracking-icon">🔄</div>
+                                    <div class="tracking-content">
+                                        <h4>Processing</h4>
+                                        <p>Your order is being prepared</p>
+                                    </div>
+                                </div>
+                                <div class="tracking-divider"></div>
+                                <div class="tracking-item">
+                                    <div class="tracking-icon">🚚</div>
+                                    <div class="tracking-content">
+                                        <h4>Shipped</h4>
+                                        <p>Coming soon - we'll notify you</p>
+                                    </div>
+                                </div>
+                                <div class="tracking-divider"></div>
+                                <div class="tracking-item">
+                                    <div class="tracking-icon">🏠</div>
+                                    <div class="tracking-content">
+                                        <h4>Delivered</h4>
+                                        <p>Expected by 7 January 2026</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Next Steps -->
+                        <div class="info-card next-steps">
+                            <h2>Next Steps</h2>
+                            <div class="steps-list">
+                                <div class="step">
+                                    <div class="step-icon">1️⃣</div>
+                                    <div>
+                                        <h4>Confirmation Email</h4>
+                                        <p>Check your email for order confirmation and tracking details</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon">2️⃣</div>
+                                    <div>
+                                        <h4>Track Your Order</h4>
+                                        <p>Use your order number to track shipment in real-time</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon">3️⃣</div>
+                                    <div>
+                                        <h4>Receive & Enjoy</h4>
+                                        <p>Once delivered, unbox your beautiful beauty products!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="confirmation-sidebar">
+                        <!-- Order Summary -->
+                        <div class="summary-card">
+                            <h3>Order Summary</h3>
+                            <div class="summary-items" id="summaryItems">
+                                <!-- Items will be rendered here -->
+                            </div>
+                            <div class="summary-totals">
+                                <div class="summary-row">
+                                    <span>Subtotal</span>
+                                    <span id="summarySubtotal">€0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Shipping</span>
+                                    <span id="summaryShipping">€0.00</span>
+                                </div>
+                                <div class="summary-divider"></div>
+                                <div class="summary-row total">
+                                    <span>Total</span>
+                                    <span id="summaryTotal">€0.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="quick-links-card">
+                            <h4>Quick Links</h4>
+                            <a href="#" onclick="orderConfirmation.downloadInvoice()" class="quick-link">
+                                📄 Download Invoice
+                            </a>
+                            <a href="/account/orders" class="quick-link">
+                                📋 View All Orders
+                            </a>
+                            <a href="/shop" class="quick-link">
+                                🛍️ Continue Shopping
+                            </a>
+                            <a href="/help" class="quick-link">
+                                💬 Contact Support
+                            </a>
+                        </div>
+
+                        <!-- Help Section -->
+                        <div class="help-card">
+                            <h4>Need Help?</h4>
+                            <p>If you have any questions about your order, our support team is here to help.</p>
+                            <a href="/help" class="btn btn-secondary w-full">Contact Us</a>
+                        </div>
+
+                        <!-- Rewards -->
+                        <div class="rewards-card">
+                            <h4>💎 Earn Rewards</h4>
+                            <p>You earned <strong id="earnedPoints">0</strong> points on this order!</p>
+                            <a href="/account/rewards" class="link">View rewards</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section class="recommendations-section">
+            <div class="container">
+                <h2 class="section-title">Complete Your Beauty Routine</h2>
+                <div class="products-grid" id="recommendedProducts">
+                    <!-- Recommended products will be rendered here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <h3>Order Confirmed</h3>
+                        <p>You'll receive tracking info</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🚚</div>
+                        <h3>Fast Shipping</h3>
+                        <p>3-7 days standard delivery</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">↩️</div>
+                        <h3>Easy Returns</h3>
+                        <p>60-day return policy</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💬</div>
+                        <h3>24/7 Support</h3>
+                        <p>We're here to help</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About DANHAYS</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/shipping">Shipping Info</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms">Terms of Service</a></li>
+                        <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhaysbeauty" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@danhaysbeauty" target="_blank">TikTok</a>
+                        <a href="https://youtube.com/danhaysbeauty" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/danhaysbeauty" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 🌍</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/order-confirmation.js"></script>
+</body>
+</html>
