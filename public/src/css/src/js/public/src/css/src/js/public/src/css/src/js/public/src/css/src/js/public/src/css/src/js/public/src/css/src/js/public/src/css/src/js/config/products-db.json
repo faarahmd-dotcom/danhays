@@ -1,0 +1,30 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Pro Filt'r Foundation",
+      "brand": "Fenty Beauty",
+      "price": 35,
+      "rating": 4.8,
+      "reviews": 2345,
+      "category": "face",
+      "subcategory": "foundation",
+      "description": "Full coverage foundation with 40+ shades",
+      "image": "💄",
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "name": "Black Opal Moisturizer",
+      "brand": "Black Opal",
+      "price": 28,
+      "rating": 4.6,
+      "reviews": 1200,
+      "category": "face",
+      "subcategory": "moisturizers",
+      "description": "Nourishing moisturizer for all skin types",
+      "image": "✨",
+      "inStock": true
+    }
+  ]
+}
