@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>My Orders | DANHAYS</title>
+    <meta name="description" content="View and track your DANHAYS orders">
+    
+    <link rel="stylesheet" href="../../src/css/variables.css">
+    <link rel="stylesheet" href="../../src/css/global.css">
+    <link rel="stylesheet" href="../../src/css/components.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading orders...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-promo">
+                        <span>✨ Free Shipping on orders over €75 | 24/7 Support</span>
+                    </div>
+                    <div class="header-utilities">
+                        <a href="#" class="utility-link">Track Order</a>
+                        <a href="#" class="utility-link">Help Center</a>
+                        <a href="#" class="utility-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="navbar-brand">
+                        <a href="../index.html" class="logo">
+                            <span class="logo-emoji">💎</span>
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Shop</a>
+                            <ul class="submenu">
+                                <li><a href="../shop.html?category=face">Face</a></li>
+                                <li><a href="../shop.html?category=eyes">Eyes</a></li>
+                                <li><a href="../shop.html?category=lips">Lips</a></li>
+                                <li><a href="../shop.html?category=skincare">Skincare</a></li>
+                                <li><a href="../shop.html?category=haircare">Haircare</a></li>
+                                <li><a href="../shop.html?category=bodycare">Bodycare</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../brands.html" class="nav-link">Brands</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+
+                    <div class="header-actions">
+                        <button class="action-btn search-btn" id="searchBtn">🔍</button>
+                        <a href="wishlist.html" class="action-btn">❤️<span class="badge" id="wishlistBadge">0</span></a>
+                        <a href="profile.html" class="action-btn">👤</a>
+                        <a href="../cart.html" class="action-btn">🛍️<span class="badge" id="cartBadge">0</span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products, brands...">
+                    <button id="searchSubmit">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <a href="profile.html">Profile</a>
+                    <span>/</span>
+                    <span>My Orders</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Container -->
+        <div class="orders-container">
+            <div class="container">
+                <div class="orders-header">
+                    <h1>My Orders</h1>
+                    <p>Track and manage your purchases</p>
+                </div>
+
+                <!-- Filter & Sort -->
+                <div class="orders-controls">
+                    <div class="filter-group">
+                        <select id="statusFilter">
+                            <option value="">All Orders</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <select id="sortBy">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="price-high">Highest Total</option>
+                            <option value="price-low">Lowest Total</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Orders List -->
+                <div class="orders-list">
+                    <!-- Order 1 -->
+                    <div class="order-item">
+                        <div class="order-header-row">
+                            <div class="order-info">
+                                <h3>Order #ORD-001</h3>
+                                <p class="order-date">Placed on January 10, 2026</p>
+                            </div>
+                            <div class="order-status">
+                                <span class="status-badge status-delivered">✓ Delivered</span>
+                            </div>
+                        </div>
+
+                        <div class="order-details">
+                            <div class="detail-row">
+                                <div>
+                                    <strong>€125.50</strong>
+                                    <p>3 items</p>
+                                </div>
+                                <div>
+                                    <p><strong>Delivered on:</strong> January 15, 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="order-items">
+                                <div class="item">
+                                    <span>Pro Filt'r Foundation × 1</span>
+                                    <span>€35.00</span>
+                                </div>
+                                <div class="item">
+                                    <span>Eye Primer × 1</span>
+                                    <span>€28.00</span>
+                                </div>
+                                <div class="item">
+                                    <span>Lipstick × 1</span>
+                                    <span>€25.00</span>
+                                </div>
+                                <div class="item total">
+                                    <span>Subtotal</span>
+                                    <span>€88.00</span>
+                                </div>
+                                <div class="item">
+                                    <span>Shipping</span>
+                                    <span>€0.00</span>
+                                </div>
+                                <div class="item total">
+                                    <span>Total</span>
+                                    <span>€125.50</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-actions">
+                            <a href="#" class="btn btn-sm btn-outline">View Details</a>
+                            <a href="#" class="btn btn-sm btn-outline">Track Package</a>
+                            <a href="#" class="btn btn-sm btn-outline">Print Receipt</a>
+                            <a href="#" class="btn btn-sm btn-outline">Reorder</a>
+                        </div>
+                    </div>
+
+                    <!-- Order 2 -->
+                    <div class="order-item">
+                        <div class="order-header-row">
+                            <div class="order-info">
+                                <h3>Order #ORD-002</h3>
+                                <p class="order-date">Placed on January 5, 2026</p>
+                            </div>
+                            <div class="order-status">
+                                <span class="status-badge status-shipped">📦 Shipped</span>
+                            </div>
+                        </div>
+
+                        <div class="order-details">
+                            <div class="detail-row">
+                                <div>
+                                    <strong>€87.30</strong>
+                                    <p>2 items</p>
+                                </div>
+                                <div>
+                                    <p><strong>Shipped on:</strong> January 8, 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="order-items">
+                                <div class="item">
+                                    <span>Raw Shea Butter Shampoo × 2</span>
+                                    <span>€24.00</span>
+                                </div>
+                                <div class="item">
+                                    <span>Coconut & Hibiscus Curl Cream × 1</span>
+                                    <span>€14.00</span>
+                                </div>
+                                <div class="item total">
+                                    <span>Subtotal</span>
+                                    <span>€62.00</span>
+                                </div>
+                                <div class="item">
+                                    <span>Shipping</span>
+                                    <span>€0.00</span>
+                                </div>
+                                <div class="item total">
+                                    <span>Total</span>
+                                    <span>€87.30</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-actions">
+                            <a href="#" class="btn btn-sm btn-outline">View Details</a>
+                            <a href="#" class="btn btn-sm btn-outline">Track Package</a>
+                            <a href="#" class="btn btn-sm btn-outline">Print Receipt</a>
+                            <a href="#" class="btn btn-sm btn-outline">Reorder</a>
+                        </div>
+                    </div>
+
+                    <!-- Order 3 -->
+                    <div class="order-item">
+                        <div class="order-header-row">
+                            <div class="order-info">
+                                <h3>Order #ORD-003</h3>
+                                <p class="order-date">Placed on December 28, 2025</p>
+                            </div>
+                            <div class="order-status">
+                                <span class="status-badge status-processing">⏳ Processing</span>
+                            </div>
+                        </div>
+
+                        <div class="order-details">
+                            <div class="detail-row">
+                                <div>
+                                    <strong>€156.80</strong>
+                                    <p>4 items</p>
+                                </div>
+                                <div>
+                                    <p><strong>Estimated Delivery:</strong> January 20, 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="order-items">
+                                <div class="item">
+                                    <span>Pro Glow Highlighter × 1</span>
+                                    <span>€30.00</span>
+                                </div>
+                                <div class="item total">
+                                    <span>Subtotal</span>
+                                    <span>€126.80</span>
+                                </div>
+                                <div class="item">
+                                    <span>Shipping</span>
+                                    <span>€0.00</span>
+                                </div>
+                                <div class="item total">
+                                    <span>Total</span>
+                                    <span>€156.80</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-actions">
+                            <a href="#" class="btn btn-sm btn-outline">View Details</a>
+                            <a href="#" class="btn btn-sm btn-outline">Track Package</a>
+                            <a href="#" class="btn btn-sm btn-outline">Cancel Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" style="display: none;">
+                    <div class="empty-icon">📦</div>
+                    <h3>No Orders Found</h3>
+                    <p>You haven't placed any orders yet.</p>
+                    <a href="../shop.html" class="btn btn-primary">Start Shopping</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About DANHAYS</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhays" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@danhays" target="_blank">🎵 TikTok</a>
+                        <a href="https://youtube.com/@danhays" target="_blank">📹 YouTube</a>
+                        <a href="https://twitter.com/danhays" target="_blank">𝕏 Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 💎</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../src/js/main.js"></script>
+    <script>
+        // Check login
+        const userProfile = JSON.parse(localStorage.getItem('userProfile') || '{}');
+        if (!userProfile.id) {
+            window.location.href = 'login.html';
+        }
+
+        // Filter functionality
+        document.getElementById('statusFilter').addEventListener('change', (e) => {
+            console.log('Filter by:', e.target.value);
+        });
+
+        document.getElementById('sortBy').addEventListener('change', (e) => {
+            console.log('Sort by:', e.target.value);
+        });
+
+        // Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Search Toggle
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            document.getElementById('searchBar').classList.toggle('active');
+        });
+
+        // Hide preloader
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
