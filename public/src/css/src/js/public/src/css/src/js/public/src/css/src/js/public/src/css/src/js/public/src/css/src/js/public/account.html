@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>My Account | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="Manage your DANHAYS account, orders, wishlist, and preferences">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danhays.com/account">
+    <meta property="og:title" content="My Account | DANHAYS">
+    <meta property="og:description" content="Manage your beauty preferences and orders">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../src/css/variables.css">
+    <link rel="stylesheet" href="../src/css/global.css">
+    <link rel="stylesheet" href="../src/css/components.css">
+    <link rel="stylesheet" href="../src/css/account.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading your account...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="left">
+                        <p>Welcome to DANHAYS - The Home of Melanin Beauty</p>
+                    </div>
+                    <div class="right">
+                        <a href="/help/track-order" class="link">Track Order</a>
+                        <span>|</span>
+                        <a href="/help" class="link">Help Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="/" class="logo-link">
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <nav class="nav-main">
+                        <ul class="nav-list">
+                            <li><a href="products.html?category=face" class="nav-link">Face</a></li>
+                            <li><a href="products.html?category=eyes" class="nav-link">Eyes</a></li>
+                            <li><a href="products.html?category=lips" class="nav-link">Lips</a></li>
+                            <li><a href="products.html?category=skincare" class="nav-link">Skincare</a></li>
+                            <li><a href="products.html?category=haircare" class="nav-link">Haircare</a></li>
+                            <li><a href="brands.html" class="nav-link">Brands</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-icons">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <span>🔍</span>
+                        </button>
+                        <a href="/account" class="icon-btn active">
+                            <span>👤</span>
+                        </a>
+                        <a href="/wishlist" class="icon-btn">
+                            <span>❤️</span>
+                            <span class="wishlist-count" id="wishlistCount">0</span>
+                        </a>
+                        <a href="/cart" class="icon-btn cart-btn">
+                            <span>🛒</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main account-main">
+        <div class="account-container">
+            <!-- Sidebar Navigation -->
+            <aside class="account-sidebar">
+                <!-- User Profile Card -->
+                <div class="sidebar-profile">
+                    <div class="profile-avatar" id="profileAvatar">
+                        <span>JD</span>
+                    </div>
+                    <div class="profile-info">
+                        <h3 id="profileName">John Doe</h3>
+                        <p id="profileEmail">john@example.com</p>
+                        <div class="profile-tier" id="profileTier">
+                            <span class="tier-badge">Silver Member</span>
+                            <span class="tier-points" id="tierPoints">245 points</span>
+                        </div>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn">
+                        🚪 Sign Out
+                    </button>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="sidebar-nav">
+                    <div class="nav-group">
+                        <h4 class="nav-group-title">Dashboard</h4>
+                        <ul class="nav-list">
+                            <li><a href="#overview" class="nav-item active" data-section="overview">📊 Overview</a></li>
+                            <li><a href="#rewards" class="nav-item" data-section="rewards">🎁 Rewards & Points</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <h4 class="nav-group-title">Shopping</h4>
+                        <ul class="nav-list">
+                            <li><a href="#orders" class="nav-item" data-section="orders">📦 Orders</a></li>
+                            <li><a href="#wishlist" class="nav-item" data-section="wishlist">❤️ Wishlist</a></li>
+                            <li><a href="#recently-viewed" class="nav-item" data-section="recently-viewed">👀 Recently Viewed</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <h4 class="nav-group-title">Account</h4>
+                        <ul class="nav-list">
+                            <li><a href="#profile" class="nav-item" data-section="profile">👤 Profile</a></li>
+                            <li><a href="#addresses" class="nav-item" data-section="addresses">📍 Addresses</a></li>
+                            <li><a href="#payment-methods" class="nav-item" data-section="payment-methods">💳 Payment Methods</a></li>
+                            <li><a href="#preferences" class="nav-item" data-section="preferences">⚙️ Preferences</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <h4 class="nav-group-title">Other</h4>
+                        <ul class="nav-list">
+                            <li><a href="#referrals" class="nav-item" data-section="referrals">🔗 Referrals</a></li>
+                            <li><a href="#support" class="nav-item" data-section="support">💬 Support Tickets</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="account-content">
+                <!-- Overview Section -->
+                <section id="overview" class="account-section active" data-section="overview">
+                    <div class="section-header">
+                        <h1>Welcome Back! 👋</h1>
+                        <p id="greetingTime">Good morning, John</p>
+                    </div>
+
+                    <!-- KPI Cards -->
+                    <div class="kpi-strip">
+                        <div class="kpi-card">
+                            <div class="kpi-icon">📦</div>
+                            <div class="kpi-content">
+                                <p class="kpi-label">Total Orders</p>
+                                <p class="kpi-value" id="totalOrders">12</p>
+                                <p class="kpi-meta">Lifetime</p>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card">
+                            <div class="kpi-icon">💚</div>
+                            <div class="kpi-content">
+                                <p class="kpi-label">Wishlist Items</p>
+                                <p class="kpi-value" id="wishlistItems">8</p>
+                                <p class="kpi-meta">Saved</p>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card">
+                            <div class="kpi-icon">🎁</div>
+                            <div class="kpi-content">
+                                <p class="kpi-label">Rewards Points</p>
+                                <p class="kpi-value" id="rewardsPoints">245</p>
+                                <p class="kpi-meta">Available</p>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card">
+                            <div class="kpi-icon">⭐</div>
+                            <div class="kpi-content">
+                                <p class="kpi-label">Member Tier</p>
+                                <p class="kpi-value" id="memberTier">Silver</p>
+                                <p class="kpi-meta">Status</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="actions-grid">
+                            <button class="action-btn" id="continueShoppingBtn">
+                                <span class="action-icon">🛍️</span>
+                                <span>Continue Shopping</span>
+                            </button>
+                            <button class="action-btn" id="trackOrderBtn">
+                                <span class="action-icon">📍</span>
+                                <span>Track Order</span>
+                            </button>
+                            <button class="action-btn" id="browseWishlistBtn">
+                                <span class="action-icon">❤️</span>
+                                <span>Browse Wishlist</span>
+                            </button>
+                            <button class="action-btn" id="contactSupportBtn">
+                                <span class="action-icon">💬</span>
+                                <span>Contact Support</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders -->
+                    <div class="overview-card">
+                        <div class="card-header">
+                            <h3>Recent Orders</h3>
+                            <a href="#orders" class="link-secondary" data-section="orders">View All →</a>
+                        </div>
+                        <div class="recent-orders" id="recentOrders">
+                            <!-- Orders will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Latest Reviews -->
+                    <div class="overview-card">
+                        <div class="card-header">
+                            <h3>Your Recent Reviews</h3>
+                            <a href="#" class="link-secondary">View All →</a>
+                        </div>
+                        <div class="recent-reviews" id="recentReviews">
+                            <!-- Reviews will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Orders Section -->
+                <section id="orders" class="account-section" data-section="orders">
+                    <div class="section-header">
+                        <h2>My Orders</h2>
+                        <p>Track and manage all your purchases</p>
+                    </div>
+
+                    <!-- Order Filters -->
+                    <div class="order-filters">
+                        <select id="orderStatusFilter" class="filter-select">
+                            <option value="">All Orders</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="returned">Returned</option>
+                        </select>
+
+                        <input type="date" id="orderDateFrom" class="filter-input" placeholder="From Date">
+                        <input type="date" id="orderDateTo" class="filter-input" placeholder="To Date">
+
+                        <select id="orderSortBy" class="filter-select">
+                            <option value="date-desc">Newest First</option>
+                            <option value="date-asc">Oldest First</option>
+                            <option value="amount-high">Highest Amount</option>
+                            <option value="amount-low">Lowest Amount</option>
+                        </select>
+                    </div>
+
+                    <!-- Orders List -->
+                    <div class="orders-list" id="ordersList">
+                        <!-- Orders will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Wishlist Section -->
+                <section id="wishlist" class="account-section" data-section="wishlist">
+                    <div class="section-header">
+                        <h2>My Wishlist ❤️</h2>
+                        <p>Items you've saved for later</p>
+                    </div>
+
+                    <!-- Wishlist Controls -->
+                    <div class="wishlist-controls">
+                        <div class="wishlist-stats">
+                            <span id="wishlistTotal">0 items</span>
+                            <span id="wishlistTotalValue">€0.00 total value</span>
+                        </div>
+                        <button class="btn btn-outline" id="clearWishlistBtn">Clear Wishlist</button>
+                    </div>
+
+                    <!-- Wishlist Grid -->
+                    <div class="wishlist-grid" id="wishlistGrid">
+                        <!-- Wishlist items will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Recently Viewed Section -->
+                <section id="recently-viewed" class="account-section" data-section="recently-viewed">
+                    <div class="section-header">
+                        <h2>Recently Viewed</h2>
+                        <p>Products you've browsed</p>
+                    </div>
+
+                    <div class="recently-viewed-grid" id="recentlyViewedGrid">
+                        <!-- Recently viewed items will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Rewards Section -->
+                <section id="rewards" class="account-section" data-section="rewards">
+                    <div class="section-header">
+                        <h2>Melanin Rewards 🎁</h2>
+                        <p>Earn points on every purchase and redeem amazing rewards</p>
+                    </div>
+
+                    <!-- Tier Progress -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <h3 id="currentTierName">Silver Member</h3>
+                            <p id="currentTierDescription">You're earning 1.25x points on every purchase</p>
+                        </div>
+
+                        <div class="tier-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="tierProgressFill" style="width: 60%"></div>
+                            </div>
+                            <p class="progress-text">
+                                <span id="tierProgressPoints">300 points</span> until next tier
+                            </p>
+                        </div>
+
+                        <div class="tier-benefits">
+                            <h4>Current Benefits:</h4>
+                            <ul id="tierBenefitsList">
+                                <!-- Benefits will be loaded here -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Points Balance -->
+                    <div class="points-balance-card">
+                        <h3>Your Points Balance</h3>
+                        <div class="points-display">
+                            <div class="points-main">
+                                <span class="points-value" id="totalPointsDisplay">245</span>
+                                <span class="points-label">Available Points</span>
+                            </div>
+                            <div class="points-value-euro">
+                                <span>=</span>
+                                <span class="value-euro" id="pointsValueEuro">€2.45</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Points Earning Breakdown -->
+                    <div class="overview-card">
+                        <h3>How You're Earning Points</h3>
+                        <div class="earning-breakdown">
+                            <div class="earning-item">
+                                <span class="earning-label">Purchases</span>
+                                <span class="earning-value">+220 pts</span>
+                            </div>
+                            <div class="earning-item">
+                                <span class="earning-label">Reviews</span>
+                                <span class="earning-value">+25 pts</span>
+                            </div>
+                            <div class="earning-item">
+                                <span class="earning-label">Referrals</span>
+                                <span class="earning-value">+0 pts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redeem Rewards -->
+                    <div class="overview-card">
+                        <h3>Redeem Your Points</h3>
+                        <div class="rewards-catalog" id="rewardsCatalog">
+                            <!-- Rewards will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile" class="account-section" data-section="profile">
+                    <div class="section-header">
+                        <h2>Profile Information</h2>
+                        <p>Update your personal details</p>
+                    </div>
+
+                    <form class="profile-form" id="profileForm">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                            <p class="form-hint">We'll never share your email</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth</label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth">
+                            <p class="form-hint">Helps us send birthday rewards!</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skinTone">Skin Tone Profile</label>
+                            <select id="skinTone" name="skinTone">
+                                <option value="">Select...</option>
+                                <option value="fair">Fair</option>
+                                <option value="light">Light</option>
+                                <option value="light-medium">Light Medium</option>
+                                <option value="medium">Medium</option>
+                                <option value="medium-tan">Medium Tan</option>
+                                <option value="tan">Tan</option>
+                                <option value="deep">Deep</option>
+                                <option value="rich">Rich</option>
+                            </select>
+                            <p class="form-hint">Helps us recommend better shade matches</p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+
+                    <!-- Security Section -->
+                    <div class="security-section">
+                        <h3>Security</h3>
+                        <div class="security-options">
+                            <button class="btn btn-outline" id="changePasswordBtn">Change Password</button>
+                            <button class="btn btn-outline" id="two-factorBtn">Enable 2-Factor Authentication</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Addresses Section -->
+                <section id="addresses" class="account-section" data-section="addresses">
+                    <div class="section-header">
+                        <h2>Saved Addresses</h2>
+                        <p>Manage your delivery and billing addresses</p>
+                    </div>
+
+                    <button class="btn btn-primary" id="addAddressBtn">+ Add New Address</button>
+
+                    <div class="addresses-grid" id="addressesGrid">
+                        <!-- Addresses will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Payment Methods Section -->
+                <section id="payment-methods" class="account-section" data-section="payment-methods">
+                    <div class="section-header">
+                        <h2>Payment Methods</h2>
+                        <p>Securely save your payment information</p>
+                    </div>
+
+                    <button class="btn btn-primary" id="addPaymentBtn">+ Add Payment Method</button>
+
+                    <div class="payment-methods-list" id="paymentMethodsList">
+                        <!-- Payment methods will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Preferences Section -->
+                <section id="preferences" class="account-section" data-section="preferences">
+                    <div class="section-header">
+                        <h2>Preferences</h2>
+                        <p>Customize your experience</p>
+                    </div>
+
+                    <!-- Shopping Preferences -->
+                    <div class="preferences-card">
+                        <h3>Shopping Preferences</h3>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefProductRecs" checked>
+                                <span>Recommend products based on my purchases</span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefRestockNotif" checked>
+                                <span>Notify me when out-of-stock items are back</span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefPriceAlert" checked>
+                                <span>Alert me when prices drop on saved items</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Communication Preferences -->
+                    <div class="preferences-card">
+                        <h3>Communication Preferences</h3>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefEmailMarketing" checked>
+                                <span>Receive promotional emails</span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefEmailNews" checked>
+                                <span>Receive beauty tips & tutorials</span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefSmsNotif">
+                                <span>Receive SMS notifications</span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefWhatsappNotif">
+                                <span>Receive WhatsApp notifications</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Language & Region -->
+                    <div class="preferences-card">
+                        <h3>Language & Region</h3>
+                        <div class="form-group">
+                            <label for="prefLanguage">Preferred Language</label>
+                            <select id="prefLanguage">
+                                <option value="en">English</option>
+                                <option value="nl">Dutch (Nederlands)</option>
+                                <option value="fr">French (Français)</option>
+                                <option value="sw">Swahili (Kiswahili)</option>
+                                <option value="yo">Yoruba</option>
+                                <option value="ar">Arabic (العربية)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="prefCurrency">Preferred Currency</label>
+                            <select id="prefCurrency">
+                                <option value="EUR">Euro (€)</option>
+                                <option value="GBP">British Pound (£)</option>
+                                <option value="USD">US Dollar ($)</option>
+                                <option value="ZAR">South African Rand (R)</option>
+                                <option value="NGN">Nigerian Naira (₦)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Display Preferences -->
+                    <div class="preferences-card">
+                        <h3>Display Preferences</h3>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefDarkMode">
+                                <span>Dark Mode</span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefReducedMotion">
+                                <span>Reduce Motion</span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="prefHighContrast">
+                                <span>High Contrast</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="savePreferencesBtn">Save Preferences</button>
+                </section>
+
+                <!-- Referrals Section -->
+                <section id="referrals" class="account-section" data-section="referrals">
+                    <div class="section-header">
+                        <h2>Share & Earn 🎁</h2>
+                        <p>Invite friends and earn rewards</p>
+                    </div>
+
+                    <!-- Referral Stats -->
+                    <div class="referral-stats">
+                        <div class="stat-card">
+                            <p class="stat-label">Friends Referred</p>
+                            <p class="stat-value" id="friendsReferred">3</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="stat-label">Earnings</p>
+                            <p class="stat-value" id="referralEarnings">€30.00</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="stat-label">Pending</p>
+                            <p class="stat-value" id="referralPending">€15.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Referral Link -->
+                    <div class="referral-card">
+                        <h3>Your Referral Link</h3>
+                        <p>Share this link with friends. They get €15 off their first order, you earn €15 credit!</p>
+                        <div class="referral-input-group">
+                            <input type="text" id="referralLink" readonly value="">
+                            <button class="btn btn-sm" id="copyReferralBtn">Copy</button>
+                        </div>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="share-options">
+                        <h3>Share Directly</h3>
+                        <div class="share-buttons">
+                            <button class="share-btn" id="shareInstagram">📸 Instagram</button>
+                            <button class="share-btn" id="shareFacebook">👍 Facebook</button>
+                            <button class="share-btn" id="shareTwitter">𝕏 Twitter</button>
+                            <button class="share-btn" id="shareEmail">✉️ Email</button>
+                            <button class="share-btn" id="shareWhatsapp">💬 WhatsApp</button>
+                        </div>
+                    </div>
+
+                    <!-- Referral History -->
+                    <div class="referral-history">
+                        <h3>Referral History</h3>
+                        <div class="history-table" id="referralHistoryTable">
+                            <!-- Referral history will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Support Section -->
+                <section id="support" class="account-section" data-section="support">
+                    <div class="section-header">
+                        <h2>Support Tickets</h2>
+                        <p>Track your support requests</p>
+                    </div>
+
+                    <button class="btn btn-primary" id="createTicketBtn">+ Create New Ticket</button>
+
+                    <div class="support-tickets" id="supportTickets">
+                        <!-- Support tickets will be loaded here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About DANHAYS</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/shipping">Shipping Info</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms">Terms of Service</a></li>
+                        <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhaysbeauty" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@danhaysbeauty" target="_blank">TikTok</a>
+                        <a href="https://youtube.com/danhaysbeauty" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/danhaysbeauty" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 🌍</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/account.js"></script>
+</body>
+</html>
