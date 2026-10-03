@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>My Profile | DANHAYS</title>
+    <meta name="description" content="Manage your DANHAYS account profile">
+    
+    <link rel="stylesheet" href="../../src/css/variables.css">
+    <link rel="stylesheet" href="../../src/css/global.css">
+    <link rel="stylesheet" href="../../src/css/components.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading profile...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-promo">
+                        <span>✨ Free Shipping on orders over €75 | 24/7 Support</span>
+                    </div>
+                    <div class="header-utilities">
+                        <a href="#" class="utility-link">Track Order</a>
+                        <a href="#" class="utility-link">Help Center</a>
+                        <a href="#" class="utility-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="navbar-brand">
+                        <a href="../index.html" class="logo">
+                            <span class="logo-emoji">💎</span>
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Shop</a>
+                            <ul class="submenu">
+                                <li><a href="../shop.html?category=face">Face</a></li>
+                                <li><a href="../shop.html?category=eyes">Eyes</a></li>
+                                <li><a href="../shop.html?category=lips">Lips</a></li>
+                                <li><a href="../shop.html?category=skincare">Skincare</a></li>
+                                <li><a href="../shop.html?category=haircare">Haircare</a></li>
+                                <li><a href="../shop.html?category=bodycare">Bodycare</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../brands.html" class="nav-link">Brands</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+
+                    <div class="header-actions">
+                        <button class="action-btn search-btn" id="searchBtn">🔍</button>
+                        <a href="../wishlist.html" class="action-btn">❤️<span class="badge" id="wishlistBadge">0</span></a>
+                        <a href="profile.html" class="action-btn">👤</a>
+                        <a href="../cart.html" class="action-btn">🛍️<span class="badge" id="cartBadge">0</span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products, brands...">
+                    <button id="searchSubmit">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <span>My Profile</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Container -->
+        <div class="profile-container">
+            <div class="container">
+                <div class="profile-layout">
+                    <!-- Sidebar -->
+                    <aside class="profile-sidebar">
+                        <div class="profile-card">
+                            <div class="profile-avatar">👤</div>
+                            <h2 id="userName">Welcome User</h2>
+                            <p id="userEmail">user@example.com</p>
+                        </div>
+
+                        <nav class="profile-nav">
+                            <a href="#profile" class="nav-item active" data-tab="profile">
+                                <span>👤</span> My Profile
+                            </a>
+                            <a href="#orders" class="nav-item" data-tab="orders">
+                                <span>📦</span> My Orders
+                            </a>
+                            <a href="#addresses" class="nav-item" data-tab="addresses">
+                                <span>📍</span> Addresses
+                            </a>
+                            <a href="#wishlist" class="nav-item" data-tab="wishlist">
+                                <span>❤️</span> Wishlist
+                            </a>
+                            <a href="#rewards" class="nav-item" data-tab="rewards">
+                                <span>⭐</span> Rewards
+                            </a>
+                            <a href="#settings" class="nav-item" data-tab="settings">
+                                <span>⚙️</span> Settings
+                            </a>
+                            <a href="#" id="logoutBtn" class="nav-item logout">
+                                <span>🚪</span> Logout
+                            </a>
+                        </nav>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <section class="profile-content">
+                        <!-- Profile Tab -->
+                        <div class="tab-content active" id="profile">
+                            <h2>My Profile</h2>
+                            <form id="profileForm" class="profile-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" name="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="birthDate">Date of Birth</label>
+                                    <input type="date" id="birthDate" name="birthDate">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" name="gender">
+                                        <option value="">Select gender</option>
+                                        <option value="female">Female</option>
+                                        <option value="male">Male</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer-not">Prefer not to say</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+
+                            <div class="security-section">
+                                <h3>Security</h3>
+                                <button class="btn btn-outline" id="changePasswordBtn">Change Password</button>
+                                <button class="btn btn-outline" id="enable2faBtn">Enable Two-Factor Authentication</button>
+                            </div>
+                        </div>
+
+                        <!-- Orders Tab -->
+                        <div class="tab-content" id="orders">
+                            <h2>My Orders</h2>
+                            <div class="orders-list">
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div>
+                                            <strong>Order #ORD-001</strong>
+                                            <p class="date">Placed on 2026-01-10</p>
+                                        </div>
+                                        <span class="status-badge status-delivered">Delivered</span>
+                                    </div>
+                                    <div class="order-body">
+                                        <p><strong>€125.50</strong> • 3 items</p>
+                                        <p>Delivered on 2026-01-15</p>
+                                    </div>
+                                    <div class="order-actions">
+                                        <a href="#" class="btn btn-sm btn-outline">View Details</a>
+                                        <a href="#" class="btn btn-sm btn-outline">Track Package</a>
+                                    </div>
+                                </div>
+
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div>
+                                            <strong>Order #ORD-002</strong>
+                                            <p class="date">Placed on 2026-01-05</p>
+                                        </div>
+                                        <span class="status-badge status-shipped">Shipped</span>
+                                    </div>
+                                    <div class="order-body">
+                                        <p><strong>€87.30</strong> • 2 items</p>
+                                        <p>Shipped on 2026-01-08</p>
+                                    </div>
+                                    <div class="order-actions">
+                                        <a href="#" class="btn btn-sm btn-outline">View Details</a>
+                                        <a href="#" class="btn btn-sm btn-outline">Track Package</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Addresses Tab -->
+                        <div class="tab-content" id="addresses">
+                            <h2>Saved Addresses</h2>
+                            <button class="btn btn-primary" id="addAddressBtn">+ Add New Address</button>
+                            
+                            <div class="addresses-list">
+                                <div class="address-card">
+                                    <h3>Home</h3>
+                                    <p>123 Main Street<br>Amsterdam, 1012 AB<br>Netherlands</p>
+                                    <p class="phone">+31 20 123 4567</p>
+                                    <div class="address-actions">
+                                        <a href="#" class="btn btn-sm btn-outline">Edit</a>
+                                        <a href="#" class="btn btn-sm btn-outline">Delete</a>
+                                    </div>
+                                </div>
+
+                                <div class="address-card">
+                                    <h3>Office</h3>
+                                    <p>456 Business Ave<br>Amsterdam, 1050 AB<br>Netherlands</p>
+                                    <p class="phone">+31 20 987 6543</p>
+                                    <div class="address-actions">
+                                        <a href="#" class="btn btn-sm btn-outline">Edit</a>
+                                        <a href="#" class="btn btn-sm btn-outline">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wishlist Tab -->
+                        <div class="tab-content" id="wishlist">
+                            <h2>My Wishlist</h2>
+                            <div class="products-grid">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23f0e6d2' width='200' height='200'/%3E%3Ctext x='50%' y='50%' font-size='80' fill='%23D4AF37' text-anchor='middle' dy='.3em'%3E💄%3C/text%3E%3C/svg%3E" alt="Product">
+                                        <button class="wishlist-btn">❤️</button>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3><a href="../product.html">Pro Filt'r Foundation</a></h3>
+                                        <p class="brand">Fenty Beauty</p>
+                                        <div class="product-price">
+                                            <span class="price">€35.00</span>
+                                        </div>
+                                        <a href="../product.html" class="btn btn-primary btn-sm btn-block">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rewards Tab -->
+                        <div class="tab-content" id="rewards">
+                            <h2>Rewards Program</h2>
+                            <div class="rewards-summary">
+                                <div class="reward-card">
+                                    <h3>Current Points</h3>
+                                    <p class="points">2,450 ⭐</p>
+                                </div>
+                                <div class="reward-card">
+                                    <h3>Tier Status</h3>
+                                    <p class="tier">Gold Member 🥇</p>
+                                </div>
+                                <div class="reward-card">
+                                    <h3>Next Reward</h3>
+                                    <p class="reward">€25 off at 5,000 points</p>
+                                </div>
+                            </div>
+
+                            <h3>How Rewards Work</h3>
+                            <ul class="rewards-info">
+                                <li>✓ Earn 1 point per €1 spent</li>
+                                <li>✓ Bonus points on birthday</li>
+                                <li>✓ Redeem points for discounts</li>
+                                <li>✓ Exclusive member-only sales</li>
+                            </ul>
+                        </div>
+
+                        <!-- Settings Tab -->
+                        <div class="tab-content" id="settings">
+                            <h2>Account Settings</h2>
+                            
+                            <div class="settings-section">
+                                <h3>Email Preferences</h3>
+                                <div class="setting-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span>Promotional emails</span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span>Order updates</span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span>New product launches</span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        <span>Weekly newsletter</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>Privacy</h3>
+                                <p>
+                                    <a href="#">Download my data</a><br>
+                                    <a href="#">Delete my account</a>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About DANHAYS</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhays" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@danhays" target="_blank">🎵 TikTok</a>
+                        <a href="https://youtube.com/@danhays" target="_blank">📹 YouTube</a>
+                        <a href="https://twitter.com/danhays" target="_blank">𝕏 Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 💎</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../src/js/main.js"></script>
+    <script>
+        // Load user profile
+        const userProfile = JSON.parse(localStorage.getItem('userProfile') || '{}');
+        if (!userProfile.id) {
+            alert('Please login first');
+            window.location.href = 'login.html';
+        }
+
+        // Populate user info
+        document.getElementById('userName').textContent = userProfile.firstName || 'User';
+        document.getElementById('userEmail').textContent = userProfile.email || 'user@example.com';
+        document.getElementById('email').value = userProfile.email || '';
+
+        // Tab switching
+        document.querySelectorAll('.profile-nav .nav-item').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const tab = link.getAttribute('data-tab');
+                if (tab && tab !== 'logout') {
+                    e.preventDefault();
+                    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.profile-nav .nav-item').forEach(item => item.classList.remove('active'));
+                    
+                    link.classList.add('active');
+                    document.getElementById(tab).classList.add('active');
+                }
+            });
+        });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('userProfile');
+            alert('Logged out successfully');
+            window.location.href = 'login.html';
+        });
+
+        // Profile form
+        document.getElementById('profileForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Profile updated successfully!');
+        });
+
+        // Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Search Toggle
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            document.getElementById('searchBar').classList.toggle('active');
+        });
+
+        // Hide preloader
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
