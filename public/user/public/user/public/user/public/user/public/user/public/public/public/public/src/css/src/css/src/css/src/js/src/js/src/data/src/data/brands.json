@@ -1,0 +1,114 @@
+{
+  "brands": [
+    {
+      "id": 1,
+      "name": "Fenty Beauty",
+      "logo": "✨",
+      "description": "Inclusive beauty for all skin tones",
+      "products": 650,
+      "rating": 4.8,
+      "featured": true,
+      "founded": 2017,
+      "founder": "Rihanna"
+    },
+    {
+      "id": 2,
+      "name": "Black Opal",
+      "logo": "🎀",
+      "description": "Premium skincare for melanin-rich skin",
+      "products": 245,
+      "rating": 4.7,
+      "featured": false,
+      "founded": 1980,
+      "founder": "Cathy Holley"
+    },
+    {
+      "id": 3,
+      "name": "SheaMoisture",
+      "logo": "🌿",
+      "description": "Natural haircare & beauty products",
+      "products": 389,
+      "rating": 4.9,
+      "featured": false,
+      "founded": 1991,
+      "founder": "Nia Curtis"
+    },
+    {
+      "id": 4,
+      "name": "Beautyy",
+      "logo": "💫",
+      "description": "Afro-centric beauty essentials",
+      "products": 156,
+      "rating": 4.6,
+      "featured": false,
+      "founded": 2015,
+      "founder": "Ifeyinwa Frederick"
+    },
+    {
+      "id": 5,
+      "name": "Black Up",
+      "logo": "⚫",
+      "description": "Makeup made for dark skin tones",
+      "products": 198,
+      "rating": 4.5,
+      "featured": false,
+      "founded": 2003,
+      "founder": "Noir Cosmetics"
+    },
+    {
+      "id": 6,
+      "name": "MAC",
+      "logo": "💋",
+      "description": "Professional makeup and tools",
+      "products": 312,
+      "rating": 4.7,
+      "featured": false,
+      "founded": 1984,
+      "founder": "Frank Toskan, Frank Angelo"
+    },
+    {
+      "id": 7,
+      "name": "NYX Professional",
+      "logo": "🔴",
+      "description": "Affordable pro-quality makeup",
+      "products": 425,
+      "rating": 4.6,
+      "featured": false,
+      "founded": 1999,
+      "founder": "Elsa Jorgesen"
+    },
+    {
+      "id": 8,
+      "name": "Carol's Daughter",
+      "logo": "🧴",
+      "description": "Natural hair & skincare",
+      "products": 127,
+      "rating": 4.4,
+      "featured": false,
+      "founded": 2002,
+      "founder": "Lisa Price"
+    },
+    {
+      "id": 9,
+      "name": "Uoma Beauty",
+      "logo": "✨",
+      "description": "Luxury beauty for all",
+      "products": 189,
+      "rating": 4.8,
+      "featured": false,
+      "founded": 2018,
+      "founder": "Sharon C"
+    },
+    {
+      "id": 10,
+      "name": "Revlon",
+      "logo": "💎",
+      "description": "Classic beauty trusted worldwide",
+      "products": 267,
+      "rating": 4.3,
+      "featured": false,
+      "founded": 1932,
+      "founder": "Joseph Revson"
+    }
+  ]
+}
