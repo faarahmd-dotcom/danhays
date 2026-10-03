@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>My Wishlist | DANHAYS</title>
+    <meta name="description" content="Your saved items on DANHAYS">
+    
+    <link rel="stylesheet" href="../../src/css/variables.css">
+    <link rel="stylesheet" href="../../src/css/global.css">
+    <link rel="stylesheet" href="../../src/css/components.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading wishlist...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-promo">
+                        <span>✨ Free Shipping on orders over €75 | 24/7 Support</span>
+                    </div>
+                    <div class="header-utilities">
+                        <a href="#" class="utility-link">Track Order</a>
+                        <a href="#" class="utility-link">Help Center</a>
+                        <a href="#" class="utility-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="navbar-brand">
+                        <a href="../index.html" class="logo">
+                            <span class="logo-emoji">💎</span>
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Shop</a>
+                            <ul class="submenu">
+                                <li><a href="../shop.html?category=face">Face</a></li>
+                                <li><a href="../shop.html?category=eyes">Eyes</a></li>
+                                <li><a href="../shop.html?category=lips">Lips</a></li>
+                                <li><a href="../shop.html?category=skincare">Skincare</a></li>
+                                <li><a href="../shop.html?category=haircare">Haircare</a></li>
+                                <li><a href="../shop.html?category=bodycare">Bodycare</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../brands.html" class="nav-link">Brands</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+
+                    <div class="header-actions">
+                        <button class="action-btn search-btn" id="searchBtn">🔍</button>
+                        <a href="wishlist.html" class="action-btn">❤️<span class="badge" id="wishlistBadge">5</span></a>
+                        <a href="profile.html" class="action-btn">👤</a>
+                        <a href="../cart.html" class="action-btn">🛍️<span class="badge" id="cartBadge">0</span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products, brands...">
+                    <button id="searchSubmit">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <a href="profile.html">Profile</a>
+                    <span>/</span>
+                    <span>Wishlist</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wishlist Container -->
+        <div class="wishlist-container">
+            <div class="container">
+                <div class="wishlist-header">
+                    <h1>My Wishlist</h1>
+                    <p>5 items saved</p>
+                </div>
+
+                <!-- Filter & Sort -->
+                <div class="wishlist-controls">
+                    <div class="filter-group">
+                        <input type="text" id="searchWishlist" placeholder="Search in wishlist...">
+                    </div>
+
+                    <div class="filter-group">
+                        <select id="sortBy">
+                            <option value="newest">Newest First</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Top Rated</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <button class="btn btn-outline" id="clearWishlist">Clear Wishlist</button>
+                    </div>
+                </div>
+
+                <!-- Wishlist Items -->
+                <div class="wishlist-items">
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23f0e6d2' width='150' height='150'/%3E%3Ctext x='50%' y='50%' font-size='60' fill='%23D4AF37' text-anchor='middle' dy='.3em'%3E💄%3C/text%3E%3C/svg%3E" alt="Product">
+                        </div>
+                        <div class="item-info">
+                            <h3>Pro Filt'r Foundation</h3>
+                            <p class="brand">Fenty Beauty</p>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span>(428 reviews)</span>
+                            </div>
+                            <div class="price-section">
+                                <span class="price">€35.00</span>
+                                <span class="original-price">€50.00</span>
+                            </div>
+                            <p class="availability">✓ In Stock (150 available)</p>
+                            <div class="item-actions">
+                                <a href="../product.html" class="btn btn-primary btn-sm">View Product</a>
+                                <button class="btn btn-outline btn-sm" onclick="this.parentElement.parentElement.parentElement.remove()">Remove</button>
+                                <a href="../cart.html" class="btn btn-secondary btn-sm">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23f0e6d2' width='150' height='150'/%3E%3Ctext x='50%' y='50%' font-size='60' fill='%23D4AF37' text-anchor='middle' dy='.3em'%3E👁️%3C/text%3E%3C/svg%3E" alt="Product">
+                        </div>
+                        <div class="item-info">
+                            <h3>Eye Primer Pro</h3>
+                            <p class="brand">Fenty Beauty</p>
+                            <div class="rating">
+                                <span class="stars">★★★★☆</span>
+                                <span>(89 reviews)</span>
+                            </div>
+                            <div class="price-section">
+                                <span class="price">€28.00</span>
+                            </div>
+                            <p class="availability">✓ In Stock</p>
+                            <div class="item-actions">
+                                <a href="../product.html" class="btn btn-primary btn-sm">View Product</a>
+                                <button class="btn btn-outline btn-sm" onclick="this.parentElement.parentElement.parentElement.remove()">Remove</button>
+                                <a href="../cart.html" class="btn btn-secondary btn-sm">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23f0e6d2' width='150' height='150'/%3E%3Ctext x='50%' y='50%' font-size='60' fill='%23D4AF37' text-anchor='middle' dy='.3em'%3E💋%3C/text%3E%3C/svg%3E" alt="Product">
+                        </div>
+                        <div class="item-info">
+                            <h3>Pro Fuchsia Lipstick</h3>
+                            <p class="brand">Fenty Beauty</p>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span>(256 reviews)</span>
+                            </div>
+                            <div class="price-section">
+                                <span class="price">€25.00</span>
+                            </div>
+                            <p class="availability">✓ In Stock</p>
+                            <div class="item-actions">
+                                <a href="../product.html" class="btn btn-primary btn-sm">View Product</a>
+                                <button class="btn btn-outline btn-sm" onclick="this.parentElement.parentElement.parentElement.remove()">Remove</button>
+                                <a href="../cart.html" class="btn btn-secondary btn-sm">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23f0e6d2' width='150' height='150'/%3E%3Ctext x='50%' y='50%' font-size='60' fill='%23D4AF37' text-anchor='middle' dy='.3em'%3E💇%3C/text%3E%3C/svg%3E" alt="Product">
+                        </div>
+                        <div class="item-info">
+                            <h3>Raw Shea Butter Shampoo</h3>
+                            <p class="brand">SheaMoisture</p>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span>(512 reviews)</span>
+                            </div>
+                            <div class="price-section">
+                                <span class="price">€12.00</span>
+                            </div>
+                            <p class="availability">✓ In Stock</p>
+                            <div class="item-actions">
+                                <a href="../product.html" class="btn btn-primary btn-sm">View Product</a>
+                                <button class="btn btn-outline btn-sm" onclick="this.parentElement.parentElement.parentElement.remove()">Remove</button>
+                                <a href="../cart.html" class="btn btn-secondary btn-sm">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23f0e6d2' width='150' height='150'/%3E%3Ctext x='50%' y='50%' font-size='60' fill='%23D4AF37' text-anchor='middle' dy='.3em'%3E✨%3C/text%3E%3C/svg%3E" alt="Product">
+                        </div>
+                        <div class="item-info">
+                            <h3>Coconut & Hibiscus Curl Cream</h3>
+                            <p class="brand">SheaMoisture</p>
+                            <div class="rating">
+                                <span class="stars">★★★★☆</span>
+                                <span>(178 reviews)</span>
+                            </div>
+                            <div class="price-section">
+                                <span class="price">€14.00</span>
+                            </div>
+                            <p class="availability">✓ In Stock</p>
+                            <div class="item-actions">
+                                <a href="../product.html" class="btn btn-primary btn-sm">View Product</a>
+                                <button class="btn btn-outline btn-sm" onclick="this.parentElement.parentElement.parentElement.remove()">Remove</button>
+                                <a href="../cart.html" class="btn btn-secondary btn-sm">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Summary -->
+                <div class="wishlist-summary">
+                    <div class="summary-card">
+                        <h3>Total Value</h3>
+                        <p class="amount">€114.00</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Items</h3>
+                        <p class="amount">5</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Potential Savings</h3>
+                        <p class="amount">€15.00</p>
+                    </div>
+                </div>
+
+                <!-- Add All to Cart -->
+                <div class="wishlist-actions">
+                    <button class="btn btn-primary btn-lg" id="addAllToCart">Add All to Cart</button>
+                    <a href="../shop.html" class="btn btn-outline btn-lg">Continue Shopping</a>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" style="display: none;">
+                    <div class="empty-icon">❤️</div>
+                    <h3>Your Wishlist is Empty</h3>
+                    <p>Start adding items to your wishlist to save them for later!</p>
+                    <a href="../shop.html" class="btn btn-primary">Start Shopping</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About DANHAYS</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhays" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@danhays" target="_blank">🎵 TikTok</a>
+                        <a href="https://youtube.com/@danhays" target="_blank">📹 YouTube</a>
+                        <a href="https://twitter.com/danhays" target="_blank">𝕏 Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 💎</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../src/js/main.js"></script>
+    <script>
+        // Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Search Toggle
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            document.getElementById('searchBar').classList.toggle('active');
+        });
+
+        // Search in wishlist
+        document.getElementById('searchWishlist').addEventListener('input', (e) => {
+            console.log('Search:', e.target.value);
+        });
+
+        // Sort
+        document.getElementById('sortBy').addEventListener('change', (e) => {
+            console.log('Sort by:', e.target.value);
+        });
+
+        // Add all to cart
+        document.getElementById('addAllToCart').addEventListener('click', () => {
+            alert('All items added to cart!');
+            window.location.href = '../cart.html';
+        });
+
+        // Clear wishlist
+        document.getElementById('clearWishlist').addEventListener('click', () => {
+            if (confirm('Are you sure you want to clear your wishlist?')) {
+                document.querySelector('.wishlist-items').innerHTML = '';
+                document.querySelector('.empty-state').style.display = 'block';
+                document.querySelector('.wishlist-summary').style.display = 'none';
+                document.querySelector('.wishlist-actions').style.display = 'none';
+            }
+        });
+
+        // Hide preloader
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
