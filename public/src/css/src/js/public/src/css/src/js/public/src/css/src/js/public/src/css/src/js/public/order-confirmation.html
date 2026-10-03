@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Order Confirmed | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="Your order has been confirmed at DANHAYS">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danhays.com/order-confirmation">
+    <meta property="og:title" content="Order Confirmed | DANHAYS">
+    <meta property="og:description" content="Thank you for your purchase!">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../src/css/variables.css">
+    <link rel="stylesheet" href="../src/css/global.css">
+    <link rel="stylesheet" href="../src/css/components.css">
+    <link rel="stylesheet" href="../src/css/order-confirmation.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading order details...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="left">
+                        <p>Welcome to DANHAYS - The Home of Melanin Beauty</p>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="link">Track Order</a>
+                        <span>|</span>
+                        <a href="#" class="link">Help Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="/" class="logo-link">
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <nav class="nav-main">
+                        <ul class="nav-list">
+                            <li><a href="products.html?category=face" class="nav-link">Face</a></li>
+                            <li><a href="products.html?category=eyes" class="nav-link">Eyes</a></li>
+                            <li><a href="products.html?category=lips" class="nav-link">Lips</a></li>
+                            <li><a href="products.html?category=skincare" class="nav-link">Skincare</a></li>
+                            <li><a href="products.html?category=haircare" class="nav-link">Haircare</a></li>
+                            <li><a href="brands.html" class="nav-link">Brands</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-icons">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <span>🔍</span>
+                        </button>
+                        <a href="/account" class="icon-btn">
+                            <span>👤</span>
+                        </a>
+                        <a href="/wishlist" class="icon-btn">
+                            <span>❤️</span>
+                        </a>
+                        <a href="cart.html" class="icon-btn cart-btn">
+                            <span>🛒</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Success Section -->
+        <section class="success-section">
+            <div class="container">
+                <div class="success-card">
+                    <div class="success-icon">✓</div>
+                    <h1>Thank You for Your Order!</h1>
+                    <p>Your order has been confirmed and will be shipped soon.</p>
+                    <div class="order-number">
+                        Order <span id="orderId">ORD-XXXXXXXXX</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Details Section -->
+        <section class="order-details-section">
+            <div class="container">
+                <div class="details-layout">
+                    <!-- Main Details -->
+                    <div class="details-main">
+                        <!-- Order Status -->
+                        <div class="details-card">
+                            <h2>Order Status</h2>
+                            <div class="order-timeline">
+                                <div class="timeline-step completed" data-step="confirmed">
+                                    <div class="timeline-marker">✓</div>
+                                    <div class="timeline-content">
+                                        <h3>Order Confirmed</h3>
+                                        <p id="confirmedTime">Today</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-step" data-step="processing">
+                                    <div class="timeline-marker">⏱</div>
+                                    <div class="timeline-content">
+                                        <h3>Processing</h3>
+                                        <p>1-2 business days</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-step" data-step="shipped">
+                                    <div class="timeline-marker">📦</div>
+                                    <div class="timeline-content">
+                                        <h3>Shipped</h3>
+                                        <p>Tracking info will be sent to your email</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-step" data-step="delivered">
+                                    <div class="timeline-marker">🚚</div>
+                                    <div class="timeline-content">
+                                        <h3>Delivered</h3>
+                                        <p id="estimatedDelivery">5-7 business days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Address -->
+                        <div class="details-card">
+                            <h2>Shipping Address</h2>
+                            <div class="address-info">
+                                <p id="shippingName">John Doe</p>
+                                <p id="shippingAddress">123 Main Street</p>
+                                <p id="shippingCity">New York, NY 10001</p>
+                                <p id="shippingCountry">United States</p>
+                            </div>
+                        </div>
+
+                        <!-- Order Items -->
+                        <div class="details-card">
+                            <h2>Order Items</h2>
+                            <div class="items-list" id="orderItemsList">
+                                <!-- Items will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="details-sidebar">
+                        <!-- Order Summary -->
+                        <div class="sidebar-card">
+                            <h3>Order Summary</h3>
+                            
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="summarySubtotal">€0.00</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span id="summaryShipping">€0.00</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Tax</span>
+                                <span id="summaryTax">€0.00</span>
+                            </div>
+
+                            <div class="summary-divider"></div>
+
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span id="summaryTotal">€0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="sidebar-card actions-card">
+                            <button class="btn btn-primary w-full" id="printBtn">
+                                🖨️ Print Receipt
+                            </button>
+                            <button class="btn btn-outline w-full" id="downloadBtn">
+                                📥 Download Receipt
+                            </button>
+                            <button class="btn btn-outline w-full" id="trackBtn">
+                                📍 Track Order
+                            </button>
+                        </div>
+
+                        <!-- Email Confirmation -->
+                        <div class="sidebar-card info-card">
+                            <h4>📧 Confirmation Email</h4>
+                            <p id="confirmationEmail">confirmation@email.com</p>
+                            <p class="info-text">A detailed receipt has been sent to your email.</p>
+                        </div>
+
+                        <!-- Next Steps -->
+                        <div class="sidebar-card next-steps-card">
+                            <h4>📋 Next Steps</h4>
+                            <ul class="next-steps-list">
+                                <li>Check your email for order confirmation</li>
+                                <li>Receive tracking info in 1-2 days</li>
+                                <li>Track your shipment</li>
+                                <li>Leave a review after delivery</li>
+                            </ul>
+                        </div>
+
+                        <!-- Guarantees -->
+                        <div class="sidebar-card guarantees-card">
+                            <div class="guarantee-item">
+                                <span>✓</span>
+                                <span>Money Back Guarantee</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <span>✓</span>
+                                <span>Free Returns</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <span>✓</span>
+                                <span>Secure Payment</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Continue Shopping Section -->
+        <section class="continue-shopping-section">
+            <div class="container">
+                <h2>Continue Shopping</h2>
+                <div class="recommended-grid" id="recommendedGrid">
+                    <!-- Recommended products will be loaded here -->
+                </div>
+                <div class="continue-actions">
+                    <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+                    <a href="/" class="btn btn-outline">Back to Home</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Share & Refer Section -->
+        <section class="share-refer-section">
+            <div class="container">
+                <div class="share-card">
+                    <h2>Share Your Love for DANHAYS</h2>
+                    <p>Tell your friends about our amazing products!</p>
+                    <div class="share-buttons">
+                        <button class="share-btn" id="shareInstagram">📸 Instagram</button>
+                        <button class="share-btn" id="shareFacebook">👍 Facebook</button>
+                        <button class="share-btn" id="shareTwitter">𝕏 Twitter</button>
+                        <button class="share-btn" id="shareEmail">✉️ Email</button>
+                    </div>
+                </div>
+
+                <div class="referral-card">
+                    <h3>Refer & Earn</h3>
+                    <p>Share your referral link and earn €10 credit for every friend who makes a purchase!</p>
+                    <div class="referral-link">
+                        <input type="text" id="referralLink" readonly>
+                        <button class="btn btn-sm" id="copyReferralBtn">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>When will my order arrive?</h3>
+                        <p>Standard shipping takes 5-7 business days. Express shipping takes 2-3 business days. You'll receive a tracking number once your order ships.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I modify my order?</h3>
+                        <p>Orders can be modified within 1 hour of placement. Contact our support team immediately if you need to make changes.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What's your return policy?</h3>
+                        <p>We offer a 30-day money-back guarantee on all products. If you're not satisfied, we'll process your return with free return shipping.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I track my package?</h3>
+                        <p>Once your order ships, you'll receive an email with a tracking number. Click the link to track your package in real-time.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Do you ship internationally?</h3>
+                        <p>Yes! We ship to most countries worldwide. International shipping times vary but typically take 7-14 business days.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What if I have questions?</h3>
+                        <p>Our customer support team is available 24/7. Email us at support@danhays.com or call +1-800-DANHAYS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">🔒</div>
+                        <h3>Secure Payment</h3>
+                        <p>SSL encrypted</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🚚</div>
+                        <h3>Fast Shipping</h3>
+                        <p>5-7 days</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💚</div>
+                        <h3>Easy Returns</h3>
+                        <p>30-day guarantee</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💬</div>
+                        <h3>Support</h3>
+                        <p>24/7 help</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About DANHAYS</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/shipping">Shipping Info</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms">Terms of Service</a></li>
+                        <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhaysbeauty" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@danhaysbeauty" target="_blank">TikTok</a>
+                        <a href="https://youtube.com/danhaysbeauty" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/danhaysbeauty" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 🌍</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/order-confirmation.js"></script>
+</body>
+</html>
