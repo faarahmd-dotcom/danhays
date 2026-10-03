@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Create Account | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="Join DANHAYS and start shopping for melanin-friendly beauty products">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danhays.com/register">
+    <meta property="og:title" content="Create Account | DANHAYS">
+    <meta property="og:description" content="Join our community of beauty lovers">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../src/css/variables.css">
+    <link rel="stylesheet" href="../src/css/global.css">
+    <link rel="stylesheet" href="../src/css/components.css">
+    <link rel="stylesheet" href="../src/css/auth.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Auth Container -->
+    <div class="auth-container">
+        <!-- Left Panel -->
+        <div class="auth-left">
+            <div class="auth-left-content">
+                <div class="auth-logo">
+                    <span class="logo-emoji">💅</span>
+                    <span class="logo-text">DANHAYS</span>
+                </div>
+                <h1>Join Our Community</h1>
+                <p>Discover beauty products made for melanin-rich skin</p>
+                
+                <div class="benefits-list">
+                    <div class="benefit">
+                        <span class="benefit-icon">🎁</span>
+                        <span>Earn Rewards</span>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">📦</span>
+                        <span>Fast Shipping</span>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">💚</span>
+                        <span>Easy Returns</span>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">🌍</span>
+                        <span>Global Community</span>
+                    </div>
+                </div>
+
+                <div class="social-proof">
+                    <p>⭐⭐⭐⭐⭐ Trusted by 500K+ beauty enthusiasts worldwide</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel (Register Form) -->
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <h2>Create Account</h2>
+                <p class="auth-subtitle">Join DANHAYS in 2 minutes</p>
+
+                <!-- Registration Form -->
+                <form id="registerForm" class="auth-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input 
+                                type="text" 
+                                id="firstName" 
+                                name="firstName" 
+                                placeholder="First name"
+                                required
+                            >
+                            <span class="form-error" id="firstNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input 
+                                type="text" 
+                                id="lastName" 
+                                name="lastName" 
+                                placeholder="Last name"
+                                required
+                            >
+                            <span class="form-error" id="lastNameError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerEmail">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="registerEmail" 
+                            name="email" 
+                            placeholder="you@example.com"
+                            required
+                        >
+                        <span class="form-error" id="registerEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <div class="password-input-group">
+                            <input 
+                                type="password" 
+                                id="registerPassword" 
+                                name="password" 
+                                placeholder="Create a strong password"
+                                required
+                            >
+                            <button type="button" class="toggle-password" id="toggleRegisterPassword">👁️</button>
+                        </div>
+                        <span class="form-error" id="registerPasswordError"></span>
+                        <div class="password-strength">
+                            <div class="strength-meter">
+                                <div class="strength-bar" id="strengthBar"></div>
+                            </div>
+                            <p class="strength-text" id="strengthText">Password strength</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="password-input-group">
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Confirm your password"
+                                required
+                            >
+                            <button type="button" class="toggle-password" id="toggleConfirmPassword">👁️</button>
+                        </div>
+                        <span class="form-error" id="confirmPasswordError"></span>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        <label for="agreeTerms">
+                            I agree to the <a href="/legal/terms">Terms of Service</a> and 
+                            <a href="/legal/privacy">Privacy Policy</a>
+                        </label>
+                        <span class="form-error" id="agreeTermsError"></span>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="subscribeNewsletter" name="subscribeNewsletter" checked>
+                        <label for="subscribeNewsletter">
+                            Subscribe to our newsletter for exclusive deals and beauty tips
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-full btn-lg">
+                        Create Account
+                    </button>
+
+                    <span class="form-error" id="registerError"></span>
+                </form>
+
+                <!-- Divider -->
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- Social Register -->
+                <div class="social-login">
+                    <button class="social-btn google-btn" id="googleRegisterBtn">
+                        <span class="social-icon">🔍</span>
+                        <span>Sign up with Google</span>
+                    </button>
+                    <button class="social-btn facebook-btn" id="facebookRegisterBtn">
+                        <span class="social-icon">f</span>
+                        <span>Sign up with Facebook</span>
+                    </button>
+                </div>
+
+                <!-- Links -->
+                <div class="auth-links">
+                    <span>Already have an account? 
+                        <a href="login.html" class="link-primary">Sign in</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/auth.js"></script>
+</body>
+</html>
