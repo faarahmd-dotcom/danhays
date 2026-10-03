@@ -1,0 +1,90 @@
+{
+  "app": {
+    "name": "DANHAYS",
+    "tagline": "The Home of Melanin Beauty",
+    "version": "1.0.0",
+    "environment": "production",
+    "language": "en",
+    "timezone": "CET",
+    "currency": "EUR"
+  },
+  "site": {
+    "url": "https://danhays.com",
+    "title": "DANHAYS - The Home of Melanin Beauty",
+    "description": "Discover 2500+ curated beauty products from 50+ brands celebrating melanin beauty",
+    "keywords": "melanin beauty, black beauty, natural hair, skincare, makeup",
+    "logo": "💎",
+    "socialMedia": {
+      "instagram": "https://instagram.com/danhays",
+      "tiktok": "https://tiktok.com/@danhays",
+      "youtube": "https://youtube.com/@danhays",
+      "twitter": "https://twitter.com/danhays"
+    }
+  },
+  "features": {
+    "authentication": true,
+    "shopping": true,
+    "wishlist": true,
+    "reviews": true,
+    "rewards": true,
+    "referral": true,
+    "newsletter": true,
+    "liveChat": true
+  },
+  "shop": {
+    "productsPerPage": 12,
+    "categories": 6,
+    "brands": 50,
+    "languages": 51,
+    "currencies": 11,
+    "countries": 190,
+    "minOrderValue": 0,
+    "freeShippingThreshold": 75,
+    "expressShippingCost": 15
+  },
+  "payment": {
+    "methods": [
+      "credit_card",
+      "paypal",
+      "klarna",
+      "bank_transfer",
+      "apple_pay",
+      "google_pay"
+    ],
+    "currencies": ["EUR", "USD", "GBP", "CHF"]
+  },
+  "shipping": {
+    "countries": 190,
+    "methods": [
+      {
+        "name": "Standard Shipping",
+        "days": "3-5",
+        "cost": 0,
+        "freeAbove": 75
+      },
+      {
+        "name": "Express Shipping",
+        "days": "1-2",
+        "cost": 15,
+        "available": true
+      }
+    ]
+  },
+  "policies": {
+    "returnDays": 60,
+    "exchangeDays": 30,
+    "warranty": 12,
+    "moneyBackGuarantee": true
+  },
+  "security": {
+    "ssl": true,
+    "twoFactorAuth": true,
+    "pciCompliance": true,
+    "dataEncryption": "AES-256"
+  },
+  "analytics": {
+    "googleAnalytics": true,
+    "trackingId": "GA-XXXXXXXXX",
+    "conversionTracking": true
+  }
+}
