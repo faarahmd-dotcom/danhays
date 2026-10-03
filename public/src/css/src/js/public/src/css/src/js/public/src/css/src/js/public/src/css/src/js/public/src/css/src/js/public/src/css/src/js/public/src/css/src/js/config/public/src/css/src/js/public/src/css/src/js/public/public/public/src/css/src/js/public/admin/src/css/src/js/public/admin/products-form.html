@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Manage Products | DANHAYS Admin</title>
+    <meta name="description" content="Manage DANHAYS products">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/css/variables.css">
+    <link rel="stylesheet" href="../../src/css/global.css">
+    <link rel="stylesheet" href="../../src/css/components.css">
+    <link rel="stylesheet" href="../../src/css/admin.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar (Same as dashboard) -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <span class="logo-emoji">💎</span>
+                    <span class="logo-text">DANHAYS Admin</span>
+                </div>
+            </div>
+            <!-- Navigation will be included from main dashboard -->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-topbar">
+                <div class="topbar-left">
+                    <div class="breadcrumb">Add New Product</div>
+                </div>
+                <div class="topbar-right">
+                    <a href="dashboard.html" class="btn btn-outline">Back to Dashboard</a>
+                </div>
+            </div>
+
+            <div class="admin-content">
+                <div class="page-header">
+                    <h1>Add New Product</h1>
+                </div>
+
+                <form id="productForm" class="product-form">
+                    <!-- Basic Info -->
+                    <div class="form-section">
+                        <h3>Basic Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Product Name</label>
+                                <input type="text" name="name" required placeholder="e.g., Pro Filt'r Foundation">
+                            </div>
+                            <div class="form-group">
+                                <label>Brand</label>
+                                <select name="brand" required>
+                                    <option value="">Select Brand</option>
+                                    <option value="fenty">Fenty Beauty</option>
+                                    <option value="mac">MAC</option>
+                                    <option value="shea">SheaMoisture</option>
+                                    <option value="blackopal">Black Opal</option>
+                                    <option value="nyx">NYX</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="face">Face</option>
+                                    <option value="eyes">Eyes</option>
+                                    <option value="lips">Lips</option>
+                                    <option value="skincare">Skincare</option>
+                                    <option value="haircare">Haircare</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Subcategory</label>
+                                <select name="subcategory" required>
+                                    <option value="">Select Subcategory</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="description" rows="5" placeholder="Detailed product description" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Pricing & Inventory -->
+                    <div class="form-section">
+                        <h3>Pricing & Inventory</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Price (€)</label>
+                                <input type="number" name="price" step="0.01" required placeholder="0.00">
+                            </div>
+                            <div class="form-group">
+                                <label>Stock Quantity</label>
+                                <input type="number" name="stock" required placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Low Stock Alert</label>
+                                <input type="number" name="lowStock" value="20" placeholder="20">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Cost Price (€)</label>
+                                <input type="number" name="costPrice" step="0.01" required placeholder="0.00">
+                            </div>
+                            <div class="form-group">
+                                <label>Discount (%)</label>
+                                <input type="number" name="discount" min="0" max="100" value="0" placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shades & Variants -->
+                    <div class="form-section">
+                        <h3>Shades & Variants</h3>
+                        
+                        <div class="form-group">
+                            <label>Add Shades (for makeup products)</label>
+                            <div id="shadesContainer">
+                                <div class="shade-input-group">
+                                    <input type="text" placeholder="Shade Name (e.g., Golden Medium)">
+                                    <input type="color" placeholder="Color">
+                                    <input type="number" placeholder="Quantity">
+                                    <button type="button" class="btn btn-sm btn-outline" onclick="removeShade(this)">Remove</button>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline" onclick="addShade()">+ Add Shade</button>
+                        </div>
+                    </div>
+
+                    <!-- Media -->
+                    <div class="form-section">
+                        <h3>Media</h3>
+                        
+                        <div class="form-group">
+                            <label>Product Images</label>
+                            <input type="file" name="images" multiple accept="image/*">
+                            <small>Upload up to 5 images</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Product Video (Optional)</label>
+                            <input type="file" name="video" accept="video/*">
+                        </div>
+                    </div>
+
+                    <!-- SEO -->
+                    <div class="form-section">
+                        <h3>SEO & Settings</h3>
+                        
+                        <div class="form-group">
+                            <label>Meta Description</label>
+                            <textarea name="metaDescription" rows="3" placeholder="For search engines"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Meta Keywords</label>
+                            <input type="text" name="keywords" placeholder="Separate with commas">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group checkbox">
+                                <input type="checkbox" name="featured" id="featured">
+                                <label for="featured">Feature this product</label>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" name="active" id="active" checked>
+                                <label for="active">Active</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-lg">Add Product</button>
+                        <button type="reset" class="btn btn-outline btn-lg">Clear Form</button>
+                        <a href="dashboard.html" class="btn btn-outline btn-lg">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../src/js/main.js"></script>
+    <script>
+        function addShade() {
+            const container = document.getElementById('shadesContainer');
+            const div = document.createElement('div');
+            div.className = 'shade-input-group';
+            div.innerHTML = `
+                <input type="text" placeholder="Shade Name (e.g., Golden Medium)">
+                <input type="color" placeholder="Color">
+                <input type="number" placeholder="Quantity">
+                <button type="button" class="btn btn-sm btn-outline" onclick="removeShade(this)">Remove</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeShade(btn) {
+            btn.parentElement.remove();
+        }
+
+        document.getElementById('productForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Product added successfully!');
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>
