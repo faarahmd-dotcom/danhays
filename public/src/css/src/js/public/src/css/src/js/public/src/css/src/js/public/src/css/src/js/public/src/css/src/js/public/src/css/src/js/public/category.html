@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Category | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="Shop our curated collection of beauty products by category">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danhays.com/category">
+    <meta property="og:title" content="Shop by Category | DANHAYS">
+    <meta property="og:description" content="Discover beauty products for melanin-rich skin">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../src/css/variables.css">
+    <link rel="stylesheet" href="../src/css/global.css">
+    <link rel="stylesheet" href="../src/css/components.css">
+    <link rel="stylesheet" href="../src/css/category.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading products...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="left">
+                        <p>Welcome to DANHAYS - The Home of Melanin Beauty</p>
+                    </div>
+                    <div class="right">
+                        <a href="/help/track-order" class="link">Track Order</a>
+                        <span>|</span>
+                        <a href="/help" class="link">Help Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="/" class="logo-link">
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <nav class="nav-main">
+                        <ul class="nav-list">
+                            <li><a href="products.html?category=face" class="nav-link">Face</a></li>
+                            <li><a href="products.html?category=eyes" class="nav-link">Eyes</a></li>
+                            <li><a href="products.html?category=lips" class="nav-link">Lips</a></li>
+                            <li><a href="products.html?category=skincare" class="nav-link">Skincare</a></li>
+                            <li><a href="products.html?category=haircare" class="nav-link">Haircare</a></li>
+                            <li><a href="brands.html" class="nav-link">Brands</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-icons">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <span>🔍</span>
+                        </button>
+                        <a href="/account" class="icon-btn">
+                            <span>👤</span>
+                        </a>
+                        <a href="/wishlist" class="icon-btn">
+                            <span>❤️</span>
+                            <span class="wishlist-count" id="wishlistCount">0</span>
+                        </a>
+                        <a href="/cart" class="icon-btn cart-btn">
+                            <span>🛒</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main category-main">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="/">Home</a>
+                    <span>/</span>
+                    <a href="#" id="categoryBreadcrumb">Category</a>
+                    <span>/</span>
+                    <span id="subcategoryBreadcrumb">Subcategory</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Category Hero -->
+        <section class="category-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="categoryTitle">Category Name</h1>
+                        <p id="categoryDescription">Category description goes here</p>
+                        <div class="hero-stats">
+                            <span id="productCount">0 products</span>
+                            <span id="brandCount">0 brands</span>
+                        </div>
+                    </div>
+                    <div class="hero-image" id="categoryImage">
+                        <span>🛍️</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="category-section">
+            <div class="container">
+                <div class="category-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="category-sidebar">
+                        <!-- Search within category -->
+                        <div class="filter-group">
+                            <h3 class="filter-title">Search</h3>
+                            <input type="text" id="searchInput" class="search-input" placeholder="Search products...">
+                        </div>
+
+                        <!-- Subcategories -->
+                        <div class="filter-group" id="subcategoriesFilter">
+                            <h3 class="filter-title">Subcategories</h3>
+                            <div class="filter-options" id="subcategoriesList">
+                                <!-- Subcategories will be loaded here -->
+                            </div>
+                        </div>
+
+                        <!-- Brands Filter -->
+                        <div class="filter-group">
+                            <h3 class="filter-title">Brands</h3>
+                            <div class="filter-options" id="brandsList">
+                                <!-- Brands will be loaded here -->
+                            </div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-group">
+                            <h3 class="filter-title">Price Range</h3>
+                            <div class="price-filter">
+                                <input type="range" id="priceMin" class="price-slider" min="0" max="200" value="0">
+                                <input type="range" id="priceMax" class="price-slider" min="0" max="200" value="200">
+                                <div class="price-display">
+                                    <span id="priceMinDisplay">€0</span>
+                                    <span>-</span>
+                                    <span id="priceMaxDisplay">€200</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rating Filter -->
+                        <div class="filter-group">
+                            <h3 class="filter-title">Rating</h3>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="5" class="rating-filter">
+                                    <span>⭐⭐⭐⭐⭐ 5 Stars</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="4" class="rating-filter">
+                                    <span>⭐⭐⭐⭐ 4+ Stars</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="3" class="rating-filter">
+                                    <span>⭐⭐⭐ 3+ Stars</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Shade Filter (for Face category) -->
+                        <div class="filter-group" id="shadeFilterGroup" style="display: none;">
+                            <h3 class="filter-title">Shade</h3>
+                            <div class="shade-filter">
+                                <div class="shade-options" id="shadeList">
+                                    <!-- Shades will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <button class="btn btn-outline w-full" id="clearFiltersBtn">
+                            Clear All Filters
+                        </button>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <div class="category-content">
+                        <!-- Top Bar -->
+                        <div class="category-top-bar">
+                            <div class="results-info">
+                                <span id="resultsCount">0 products found</span>
+                            </div>
+
+                            <div class="sort-controls">
+                                <label for="sortBy">Sort by:</label>
+                                <select id="sortBy" class="sort-select">
+                                    <option value="relevance">Relevance</option>
+                                    <option value="newest">Newest</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Top Rated</option>
+                                    <option value="popular">Most Popular</option>
+                                </select>
+                            </div>
+
+                            <div class="view-controls">
+                                <button class="view-btn active" id="viewGrid" data-view="grid" title="Grid view">⊞</button>
+                                <button class="view-btn" id="viewList" data-view="list" title="List view">≡</button>
+                            </div>
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="products-grid" id="productsGrid">
+                            <!-- Products will be loaded here -->
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination" id="pagination">
+                            <!-- Pagination will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Categories Section -->
+        <section class="related-categories">
+            <div class="container">
+                <h2>Related Categories</h2>
+                <div class="categories-grid" id="relatedCategoriesGrid">
+                    <!-- Related categories will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Brands Section -->
+        <section class="featured-brands">
+            <div class="container">
+                <h2>Featured Brands in This Category</h2>
+                <div class="brands-grid" id="featuredBrandsGrid">
+                    <!-- Featured brands will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Info Section -->
+        <section class="category-info">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>💡 Tips & Guides</h3>
+                        <p>Discover expert tips on how to choose and use products from this category</p>
+                        <a href="#" class="btn btn-outline">Read Guides</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎥 Video Tutorials</h3>
+                        <p>Watch tutorials and demonstrations from beauty experts</p>
+                        <a href="#" class="btn btn-outline">Watch Videos</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>👥 Community Reviews</h3>
+                        <p>See what other customers with melanin skin think about these products</p>
+                        <a href="#" class="btn btn-outline">Read Reviews</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🔍 Shade Matcher</h3>
+                        <p>Use our AI-powered tool to find your perfect shade match</p>
+                        <a href="#" class="btn btn-outline">Find Your Shade</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About DANHAYS</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/shipping">Shipping Info</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms">Terms of Service</a></li>
+                        <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhaysbeauty" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@danhaysbeauty" target="_blank">TikTok</a>
+                        <a href="https://youtube.com/danhaysbeauty" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/danhaysbeauty" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 🌍</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/category.js"></script>
+</body>
+</html>
