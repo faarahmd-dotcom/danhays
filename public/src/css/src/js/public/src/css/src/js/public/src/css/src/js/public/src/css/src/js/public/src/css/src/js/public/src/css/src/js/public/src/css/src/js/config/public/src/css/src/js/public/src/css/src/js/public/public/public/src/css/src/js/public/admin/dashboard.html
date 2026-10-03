@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Admin Dashboard | DANHAYS</title>
+    <meta name="description" content="DANHAYS Admin Dashboard">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/css/variables.css">
+    <link rel="stylesheet" href="../../src/css/global.css">
+    <link rel="stylesheet" href="../../src/css/components.css">
+    <link rel="stylesheet" href="../../src/css/admin.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading dashboard...</p>
+        </div>
+    </div>
+
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <span class="logo-emoji">💎</span>
+                    <span class="logo-text">DANHAYS Admin</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h4 class="nav-title">MAIN</h4>
+                    <ul class="nav-list">
+                        <li><a href="#dashboard" class="nav-link active" data-page="dashboard">
+                            <span class="nav-icon">📊</span>
+                            <span>Dashboard</span>
+                        </a></li>
+                        <li><a href="#analytics" class="nav-link" data-page="analytics">
+                            <span class="nav-icon">📈</span>
+                            <span>Analytics</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h4 class="nav-title">MANAGEMENT</h4>
+                    <ul class="nav-list">
+                        <li><a href="#products" class="nav-link" data-page="products">
+                            <span class="nav-icon">📦</span>
+                            <span>Products</span>
+                            <span class="badge" id="productBadge">0</span>
+                        </a></li>
+                        <li><a href="#orders" class="nav-link" data-page="orders">
+                            <span class="nav-icon">🛒</span>
+                            <span>Orders</span>
+                            <span class="badge" id="orderBadge">0</span>
+                        </a></li>
+                        <li><a href="#users" class="nav-link" data-page="users">
+                            <span class="nav-icon">👥</span>
+                            <span>Users</span>
+                            <span class="badge" id="userBadge">0</span>
+                        </a></li>
+                        <li><a href="#brands" class="nav-link" data-page="brands">
+                            <span class="nav-icon">🏷️</span>
+                            <span>Brands</span>
+                            <span class="badge" id="brandBadge">0</span>
+                        </a></li>
+                        <li><a href="#categories" class="nav-link" data-page="categories">
+                            <span class="nav-icon">📂</span>
+                            <span>Categories</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h4 class="nav-title">OPERATIONS</h4>
+                    <ul class="nav-list">
+                        <li><a href="#inventory" class="nav-link" data-page="inventory">
+                            <span class="nav-icon">📊</span>
+                            <span>Inventory</span>
+                        </a></li>
+                        <li><a href="#payments" class="nav-link" data-page="payments">
+                            <span class="nav-icon">💳</span>
+                            <span>Payments</span>
+                        </a></li>
+                        <li><a href="#reports" class="nav-link" data-page="reports">
+                            <span class="nav-icon">📋</span>
+                            <span>Reports</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h4 class="nav-title">SETTINGS</h4>
+                    <ul class="nav-list">
+                        <li><a href="#settings" class="nav-link" data-page="settings">
+                            <span class="nav-icon">⚙️</span>
+                            <span>Settings</span>
+                        </a></li>
+                        <li><a href="#admins" class="nav-link" data-page="admins">
+                            <span class="nav-icon">🔐</span>
+                            <span>Admin Users</span>
+                        </a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <div class="admin-topbar">
+                <div class="topbar-left">
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+                    <div class="breadcrumb" id="breadcrumb">
+                        <span>Dashboard</span>
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="search-box">
+                        <input type="text" id="adminSearch" placeholder="Search...">
+                        <span class="search-icon">🔍</span>
+                    </div>
+
+                    <div class="admin-notifications">
+                        <button class="notification-btn" id="notificationBtn">
+                            <span class="notification-icon">🔔</span>
+                            <span class="notification-badge" id="notificationBadge">3</span>
+                        </button>
+
+                        <div class="notification-panel" id="notificationPanel" style="display: none;">
+                            <h4>Notifications</h4>
+                            <div class="notification-list">
+                                <div class="notification-item">
+                                    <span class="notification-type">📦</span>
+                                    <div>
+                                        <p>New order received</p>
+                                        <small>5 minutes ago</small>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <span class="notification-type">⚠️</span>
+                                    <div>
+                                        <p>Low stock alert</p>
+                                        <small>1 hour ago</small>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <span class="notification-type">👤</span>
+                                    <div>
+                                        <p>New user registered</p>
+                                        <small>2 hours ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-profile">
+                        <button class="profile-btn" id="profileBtn">
+                            <span class="profile-avatar" id="adminAvatar">AD</span>
+                        </button>
+
+                        <div class="profile-menu" id="profileMenu" style="display: none;">
+                            <a href="#" class="profile-menu-item">👤 Profile</a>
+                            <a href="#" class="profile-menu-item">⚙️ Settings</a>
+                            <a href="#" class="profile-menu-item" id="logoutMenuBtn">🚪 Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="admin-content">
+                <!-- Dashboard Page -->
+                <section id="dashboardPage" class="admin-page active">
+                    <div class="page-header">
+                        <h1>Dashboard</h1>
+                        <p>Welcome back, Admin! Here's what's happening with your store.</p>
+                    </div>
+
+                    <!-- KPI Cards -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <h3>Total Revenue</h3>
+                                <span class="kpi-trend positive">↑ 12.5%</span>
+                            </div>
+                            <div class="kpi-value">€45,230</div>
+                            <div class="kpi-detail">This month</div>
+                        </div>
+
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <h3>Total Orders</h3>
+                                <span class="kpi-trend positive">↑ 8.2%</span>
+                            </div>
+                            <div class="kpi-value" id="totalOrdersKPI">1,234</div>
+                            <div class="kpi-detail">This month</div>
+                        </div>
+
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <h3>Total Users</h3>
+                                <span class="kpi-trend positive">↑ 15.3%</span>
+                            </div>
+                            <div class="kpi-value" id="totalUsersKPI">5,678</div>
+                            <div class="kpi-detail">Registered</div>
+                        </div>
+
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <h3>Avg Order Value</h3>
+                                <span class="kpi-trend negative">↓ 2.1%</span>
+                            </div>
+                            <div class="kpi-value">€86.50</div>
+                            <div class="kpi-detail">Per order</div>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="chart-grid">
+                        <div class="chart-card">
+                            <h3>Sales Over Time</h3>
+                            <div class="chart-placeholder" style="height: 300px; background: linear-gradient(135deg, #D4AF37, #FFA500); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                                📈 Sales Chart
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <h3>Order Status Distribution</h3>
+                            <div class="chart-placeholder" style="height: 300px; background: linear-gradient(135deg, #8B7355, #D4AF37); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                                📊 Status Chart
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders -->
+                    <div class="recent-card">
+                        <div class="card-header">
+                            <h3>Recent Orders</h3>
+                            <a href="#" class="link-primary" data-page="orders">View All →</a>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentOrdersTable">
+                                    <!-- Orders will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Top Products -->
+                    <div class="recent-card">
+                        <div class="card-header">
+                            <h3>Top Products</h3>
+                            <a href="#" class="link-primary" data-page="products">View All →</a>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Brand</th>
+                                        <th>Sales</th>
+                                        <th>Revenue</th>
+                                        <th>Stock</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="topProductsTable">
+                                    <!-- Products will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Products Page -->
+                <section id="productsPage" class="admin-page">
+                    <div class="page-header">
+                        <h1>Products</h1>
+                        <button class="btn btn-primary" id="addProductBtn">+ Add Product</button>
+                    </div>
+
+                    <div class="filters-bar">
+                        <input type="text" id="productSearch" placeholder="Search products...">
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="face">Face</option>
+                            <option value="eyes">Eyes</option>
+                            <option value="lips">Lips</option>
+                        </select>
+                        <select id="brandFilter">
+                            <option value="">All Brands</option>
+                            <option value="fenty">Fenty Beauty</option>
+                            <option value="shea">SheaMoisture</option>
+                            <option value="mac">MAC</option>
+                        </select>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Brand</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Rating</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTable">
+                                <!-- Products will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Orders Page -->
+                <section id="ordersPage" class="admin-page">
+                    <div class="page-header">
+                        <h1>Orders</h1>
+                        <div class="header-actions">
+                            <select id="orderStatusFilter">
+                                <option value="">All Status</option>
+                                <option value="pending">Pending</option>
+                                <option value="processing">Processing</option>
+                                <option value="shipped">Shipped</option>
+                                <option value="delivered">Delivered</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Items</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTable">
+                                <!-- Orders will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Users Page -->
+                <section id="usersPage" class="admin-page">
+                    <div class="page-header">
+                        <h1>Users</h1>
+                        <button class="btn btn-primary" id="addUserBtn">+ Add User</button>
+                    </div>
+
+                    <div class="filters-bar">
+                        <input type="text" id="userSearch" placeholder="Search users...">
+                        <select id="userTierFilter">
+                            <option value="">All Tiers</option>
+                            <option value="bronze">Bronze</option>
+                            <option value="silver">Silver</option>
+                            <option value="gold">Gold</option>
+                            <option value="diamond">Diamond</option>
+                        </select>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Tier</th>
+                                    <th>Orders</th>
+                                    <th>Total Spent</th>
+                                    <th>Joined</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTable">
+                                <!-- Users will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Brands Page -->
+                <section id="brandsPage" class="admin-page">
+                    <div class="page-header">
+                        <h1>Brands</h1>
+                        <button class="btn btn-primary" id="addBrandBtn">+ Add Brand</button>
+                    </div>
+
+                    <div class="brands-grid">
+                        <div class="brand-card">
+                            <div class="brand-header">
+                                <span class="brand-icon">👑</span>
+                                <h3>Fenty Beauty</h3>
+                            </div>
+                            <div class="brand-info">
+                                <p><strong>Products:</strong> 145</p>
+                                <p><strong>Revenue:</strong> €12,500</p>
+                                <p><strong>Rating:</strong> 4.8/5</p>
+                            </div>
+                            <div class="brand-actions">
+                                <button class="btn btn-sm btn-outline">Edit</button>
+                                <button class="btn btn-sm btn-outline">Delete</button>
+                            </div>
+                        </div>
+
+                        <div class="brand-card">
+                            <div class="brand-header">
+                                <span class="brand-icon">🌿</span>
+                                <h3>SheaMoisture</h3>
+                            </div>
+                            <div class="brand-info">
+                                <p><strong>Products:</strong> 89</p>
+                                <p><strong>Revenue:</strong> €8,320</p>
+                                <p><strong>Rating:</strong> 4.7/5</p>
+                            </div>
+                            <div class="brand-actions">
+                                <button class="btn btn-sm btn-outline">Edit</button>
+                                <button class="btn btn-sm btn-outline">Delete</button>
+                            </div>
+                        </div>
+
+                        <div class="brand-card">
+                            <div class="brand-header">
+                                <span class="brand-icon">💎</span>
+                                <h3>Black Opal</h3>
+                            </div>
+                            <div class="brand-info">
+                                <p><strong>Products:</strong> 56</p>
+                                <p><strong>Revenue:</strong> €6,240</p>
+                                <p><strong>Rating:</strong> 4.6/5</p>
+                            </div>
+                            <div class="brand-actions">
+                                <button class="btn btn-sm btn-outline">Edit</button>
+                                <button class="btn btn-sm btn-outline">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Categories Page -->
+                <section id="categoriesPage" class="admin-page">
+                    <div class="page-header">
+                        <h1>Categories</h1>
+                        <button class="btn btn-primary" id="addCategoryBtn">+ Add Category</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Icon</th>
+                                    <th>Products</th>
+                                    <th>Subcategories</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="categoriesTable">
+                                <!-- Categories will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Settings Page -->
+                <section id="settingsPage" class="admin-page">
+                    <div class="page-header">
+                        <h1>Settings</h1>
+                    </div>
+
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h3>Store Settings</h3>
+                            <div class="form-group">
+                                <label>Store Name</label>
+                                <input type="text" value="DANHAYS" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Store Email</label>
+                                <input type="email" value="hello@danhays.com" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Support Email</label>
+                                <input type="email" value="support@danhays.com" class="form-input">
+                            </div>
+                            <button class="btn btn-primary">Save Settings</button>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Shipping Settings</h3>
+                            <div class="form-group">
+                                <label>Standard Shipping Cost (€)</label>
+                                <input type="number" value="4.95" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Express Shipping Cost (€)</label>
+                                <input type="number" value="9.95" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Free Shipping Threshold (€)</label>
+                                <input type="number" value="75" class="form-input">
+                            </div>
+                            <button class="btn btn-primary">Save Settings</button>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Payment Settings</h3>
+                            <div class="form-group">
+                                <label>Stripe API Key</label>
+                                <input type="password" placeholder="Enter your key" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>PayPal Client ID</label>
+                                <input type="password" placeholder="Enter your ID" class="form-input">
+                            </div>
+                            <button class="btn btn-primary">Save Settings</button>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Email Settings</h3>
+                            <div class="form-group">
+                                <label>SMTP Server</label>
+                                <input type="text" placeholder="smtp.gmail.com" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>SMTP Password</label>
+                                <input type="password" class="form-input">
+                            </div>
+                            <button class="btn btn-primary">Save Settings</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for editing -->
+    <div class="modal" id="editModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Edit Item</h2>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../src/js/main.js"></script>
+    <script src="../../src/js/admin.js"></script>
+</body>
+</html>
