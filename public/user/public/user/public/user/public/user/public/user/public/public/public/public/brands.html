@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Our Brands | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="Browse 50+ beauty brands celebrating melanin beauty">
+    
+    <link rel="stylesheet" href="../src/css/variables.css">
+    <link rel="stylesheet" href="../src/css/global.css">
+    <link rel="stylesheet" href="../src/css/components.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading brands...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-promo">
+                        <span>✨ Free Shipping on orders over €75 | 24/7 Support</span>
+                    </div>
+                    <div class="header-utilities">
+                        <a href="#" class="utility-link">Track Order</a>
+                        <a href="#" class="utility-link">Help Center</a>
+                        <a href="#" class="utility-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="navbar-brand">
+                        <a href="index.html" class="logo">
+                            <span class="logo-emoji">💎</span>
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Shop</a>
+                            <ul class="submenu">
+                                <li><a href="shop.html?category=face">Face</a></li>
+                                <li><a href="shop.html?category=eyes">Eyes</a></li>
+                                <li><a href="shop.html?category=lips">Lips</a></li>
+                                <li><a href="shop.html?category=skincare">Skincare</a></li>
+                                <li><a href="shop.html?category=haircare">Haircare</a></li>
+                                <li><a href="shop.html?category=bodycare">Bodycare</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="brands.html" class="nav-link">Brands</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+
+                    <div class="header-actions">
+                        <button class="action-btn search-btn" id="searchBtn">🔍</button>
+                        <a href="user/wishlist.html" class="action-btn">❤️<span class="badge" id="wishlistBadge">0</span></a>
+                        <a href="user/login.html" class="action-btn">👤</a>
+                        <a href="cart.html" class="action-btn">🛍️<span class="badge" id="cartBadge">0</span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products, brands...">
+                    <button id="searchSubmit">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Brands</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brands Section -->
+        <div class="brands-container">
+            <div class="container">
+                <div class="brands-header">
+                    <h1>Our Brands</h1>
+                    <p>Discover 50+ brands celebrating melanin beauty</p>
+                </div>
+
+                <!-- Brands Filter -->
+                <div class="brands-filter">
+                    <input type="text" id="brandSearch" placeholder="Search brands...">
+                    <select id="brandSort">
+                        <option value="name">Sort by Name</option>
+                        <option value="products">Most Products</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                </div>
+
+                <!-- Brands Grid -->
+                <div class="brands-grid" id="brandsGrid">
+                    <!-- Brand 1 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">✨</div>
+                            <span class="featured-badge">Featured</span>
+                        </div>
+                        <h3>Fenty Beauty</h3>
+                        <p class="brand-description">Inclusive beauty for all skin tones</p>
+                        <div class="brand-stats">
+                            <span>650+ Products</span>
+                            <span>⭐ 4.8/5</span>
+                        </div>
+                        <a href="shop.html?brand=fenty" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 2 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">🎀</div>
+                        </div>
+                        <h3>Black Opal</h3>
+                        <p class="brand-description">Premium skincare for melanin-rich skin</p>
+                        <div class="brand-stats">
+                            <span>245+ Products</span>
+                            <span>⭐ 4.7/5</span>
+                        </div>
+                        <a href="shop.html?brand=blackopal" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 3 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">🌿</div>
+                        </div>
+                        <h3>SheaMoisture</h3>
+                        <p class="brand-description">Natural haircare & beauty products</p>
+                        <div class="brand-stats">
+                            <span>389+ Products</span>
+                            <span>⭐ 4.9/5</span>
+                        </div>
+                        <a href="shop.html?brand=sheamoisture" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 4 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">💫</div>
+                        </div>
+                        <h3>Beautyy</h3>
+                        <p class="brand-description">Afro-centric beauty essentials</p>
+                        <div class="brand-stats">
+                            <span>156+ Products</span>
+                            <span>⭐ 4.6/5</span>
+                        </div>
+                        <a href="shop.html?brand=beautyy" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 5 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">⚫</div>
+                        </div>
+                        <h3>Black Up</h3>
+                        <p class="brand-description">Makeup made for dark skin tones</p>
+                        <div class="brand-stats">
+                            <span>198+ Products</span>
+                            <span>⭐ 4.5/5</span>
+                        </div>
+                        <a href="shop.html?brand=blackup" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 6 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">💋</div>
+                        </div>
+                        <h3>MAC Fix+</h3>
+                        <p class="brand-description">Professional makeup and tools</p>
+                        <div class="brand-stats">
+                            <span>312+ Products</span>
+                            <span>⭐ 4.7/5</span>
+                        </div>
+                        <a href="shop.html?brand=mac" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 7 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">🔴</div>
+                        </div>
+                        <h3>NYX Professional</h3>
+                        <p class="brand-description">Affordable pro-quality makeup</p>
+                        <div class="brand-stats">
+                            <span>425+ Products</span>
+                            <span>⭐ 4.6/5</span>
+                        </div>
+                        <a href="shop.html?brand=nyx" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 8 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">🧴</div>
+                        </div>
+                        <h3>Carol's Daughter</h3>
+                        <p class="brand-description">Natural hair & skincare</p>
+                        <div class="brand-stats">
+                            <span>127+ Products</span>
+                            <span>⭐ 4.4/5</span>
+                        </div>
+                        <a href="shop.html?brand=carols" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 9 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">✨</div>
+                        </div>
+                        <h3>Uoma Beauty</h3>
+                        <p class="brand-description">Luxury beauty for all</p>
+                        <div class="brand-stats">
+                            <span>189+ Products</span>
+                            <span>⭐ 4.8/5</span>
+                        </div>
+                        <a href="shop.html?brand=uoma" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 10 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">💎</div>
+                        </div>
+                        <h3>Revlon</h3>
+                        <p class="brand-description">Classic beauty trusted worldwide</p>
+                        <div class="brand-stats">
+                            <span>267+ Products</span>
+                            <span>⭐ 4.3/5</span>
+                        </div>
+                        <a href="shop.html?brand=revlon" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 11 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">🌺</div>
+                        </div>
+                        <h3>Kinky-Curly</h3>
+                        <p class="brand-description">Curl-friendly haircare</p>
+                        <div class="brand-stats">
+                            <span>89+ Products</span>
+                            <span>⭐ 4.9/5</span>
+                        </div>
+                        <a href="shop.html?brand=kinky" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+
+                    <!-- Brand 12 -->
+                    <div class="brand-item">
+                        <div class="brand-header">
+                            <div class="brand-logo">🌟</div>
+                        </div>
+                        <h3>Anastasia Beverly Hills</h3>
+                        <p class="brand-description">Premium eyebrows and makeup</p>
+                        <div class="brand-stats">
+                            <span>234+ Products</span>
+                            <span>⭐ 4.7/5</span>
+                        </div>
+                        <a href="shop.html?brand=abh" class="btn btn-primary btn-sm btn-block">Shop Brand</a>
+                    </div>
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more">
+                    <button class="btn btn-outline btn-lg">Load More Brands</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brand Stories Section -->
+        <section class="brand-stories">
+            <div class="container">
+                <h2>Brand Stories</h2>
+                <p>Discover the stories behind our featured brands</p>
+
+                <div class="stories-grid">
+                    <article class="story">
+                        <div class="story-image">💄</div>
+                        <h3>Fenty Beauty's Journey</h3>
+                        <p>Founded by Rihanna, Fenty Beauty revolutionized the beauty industry with its inclusive 40-shade foundation range...</p>
+                        <a href="#">Read Story →</a>
+                    </article>
+
+                    <article class="story">
+                        <div class="story-image">🌿</div>
+                        <h3>SheaMoisture's Mission</h3>
+                        <p>Started in 1991, SheaMoisture has been dedicated to creating natural hair and body products...</p>
+                        <a href="#">Read Story →</a>
+                    </article>
+
+                    <article class="story">
+                        <div class="story-image">✨</div>
+                        <h3>Black Opal's Legacy</h3>
+                        <p>For over 30 years, Black Opal has been creating premium skincare products specifically for melanin-rich skin...</p>
+                        <a href="#">Read Story →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About DANHAYS</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhays" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@danhays" target="_blank">🎵 TikTok</a>
+                        <a href="https://youtube.com/@danhays" target="_blank">📹 YouTube</a>
+                        <a href="https://twitter.com/danhays" target="_blank">𝕏 Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 💎</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script>
+        // Brand search
+        document.getElementById('brandSearch').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            document.querySelectorAll('.brand-item').forEach(brand => {
+                const name = brand.querySelector('h3').textContent.toLowerCase();
+                brand.style.display = name.includes(query) ? 'block' : 'none';
+            });
+        });
+
+        // Brand sort
+        document.getElementById('brandSort').addEventListener('change', (e) => {
+            console.log('Sort by:', e.target.value);
+        });
+
+        // Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Search Toggle
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            document.getElementById('searchBar').classList.toggle('active');
+        });
+
+        // Hide preloader
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
