@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Checkout | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="Complete your purchase at DANHAYS">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danhays.com/checkout">
+    <meta property="og:title" content="Checkout | DANHAYS">
+    <meta property="og:description" content="Secure checkout at DANHAYS">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../src/css/variables.css">
+    <link rel="stylesheet" href="../src/css/global.css">
+    <link rel="stylesheet" href="../src/css/components.css">
+    <link rel="stylesheet" href="../src/css/checkout.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading checkout...</p>
+        </div>
+    </div>
+
+    <!-- Header (Simplified) -->
+    <header class="header-simple">
+        <div class="container">
+            <div class="header-simple-content">
+                <div class="logo">
+                    <a href="/" class="logo-link">
+                        <span class="logo-text">DANHAYS</span>
+                    </a>
+                </div>
+                <div class="checkout-steps">
+                    <div class="step active" data-step="1">Cart</div>
+                    <div class="step active" data-step="2">Checkout</div>
+                    <div class="step" data-step="3">Confirmation</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="checkout-section">
+            <div class="container">
+                <div class="checkout-layout">
+                    <!-- Checkout Form -->
+                    <div class="checkout-form-section">
+                        <!-- Shipping Information -->
+                        <div class="form-section">
+                            <h2>1. Shipping Address</h2>
+                            <form id="shippingForm" class="form-group">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>First Name *</label>
+                                        <input type="text" id="firstName" class="form-input" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Last Name *</label>
+                                        <input type="text" id="lastName" class="form-input" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label>Email Address *</label>
+                                    <input type="email" id="email" class="form-input" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label>Street Address *</label>
+                                    <input type="text" id="address" class="form-input" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>City *</label>
+                                        <input type="text" id="city" class="form-input" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>State/Region *</label>
+                                        <input type="text" id="state" class="form-input" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Postal Code *</label>
+                                        <input type="text" id="postalCode" class="form-input" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Country *</label>
+                                        <select id="country" class="form-input" required>
+                                            <option value="">Select Country</option>
+                                            <option value="US">United States</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="UK">United Kingdom</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="NL">Netherlands</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="FR">France</option>
+                                            <option value="ES">Spain</option>
+                                            <option value="IT">Italy</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="sameAsBilling">
+                                    <label for="sameAsBilling">Billing address same as shipping</label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Shipping Method -->
+                        <div class="form-section">
+                            <h2>2. Shipping Method</h2>
+                            <div class="shipping-methods">
+                                <label class="shipping-option">
+                                    <input type="radio" name="shippingMethod" value="standard" checked>
+                                    <div class="option-content">
+                                        <div class="option-title">Standard Shipping</div>
+                                        <div class="option-desc">5-7 business days</div>
+                                    </div>
+                                    <div class="option-price" id="standardPrice">Free</div>
+                                </label>
+
+                                <label class="shipping-option">
+                                    <input type="radio" name="shippingMethod" value="express">
+                                    <div class="option-content">
+                                        <div class="option-title">Express Shipping</div>
+                                        <div class="option-desc">2-3 business days</div>
+                                    </div>
+                                    <div class="option-price">€10.00</div>
+                                </label>
+
+                                <label class="shipping-option">
+                                    <input type="radio" name="shippingMethod" value="overnight">
+                                    <div class="option-content">
+                                        <div class="option-title">Overnight Shipping</div>
+                                        <div class="option-desc">Next business day</div>
+                                    </div>
+                                    <div class="option-price">€25.00</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Payment Information -->
+                        <div class="form-section">
+                            <h2>3. Payment Method</h2>
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="card" checked>
+                                    <span class="option-label">💳 Credit/Debit Card</span>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="paypal">
+                                    <span class="option-label">🅿️ PayPal</span>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="apple">
+                                    <span class="option-label">🍎 Apple Pay</span>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="google">
+                                    <span class="option-label">🔵 Google Pay</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Card Details -->
+                        <div class="form-section" id="cardSection">
+                            <h3>Card Details</h3>
+                            <form id="cardForm" class="form-group">
+                                <div class="form-field">
+                                    <label>Cardholder Name *</label>
+                                    <input type="text" id="cardName" class="form-input" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label>Card Number *</label>
+                                    <input type="text" id="cardNumber" class="form-input" placeholder="1234 5678 9012 3456" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Expiry Date *</label>
+                                        <input type="text" id="cardExpiry" class="form-input" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>CVV *</label>
+                                        <input type="text" id="cardCVV" class="form-input" placeholder="123" required>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Terms -->
+                        <div class="form-section terms-section">
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="termsCheckbox" required>
+                                <label for="termsCheckbox">I agree to the <a href="#" target="_blank">Terms & Conditions</a> and <a href="#" target="_blank">Privacy Policy</a></label>
+                            </div>
+
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="newsletterCheckbox">
+                                <label for="newsletterCheckbox">Subscribe to our newsletter for exclusive offers</label>
+                            </div>
+                        </div>
+
+                        <!-- Place Order Button -->
+                        <button class="btn btn-primary btn-lg w-full" id="placeOrderBtn">
+                            Place Order
+                        </button>
+                    </div>
+
+                    <!-- Order Summary Sidebar -->
+                    <aside class="checkout-summary">
+                        <div class="summary-card">
+                            <h3>Order Summary</h3>
+                            
+                            <div class="summary-items" id="summaryItems">
+                                <!-- Items will be loaded here -->
+                            </div>
+
+                            <div class="summary-divider"></div>
+
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="summarySubtotal">€0.00</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span id="summaryShipping">Free</span>
+                            </div>
+
+                            <div class="summary-row discount" id="discountRow" style="display:none;">
+                                <span>Discount</span>
+                                <span id="summaryDiscount">-€0.00</span>
+                            </div>
+
+                            <div class="summary-row tax">
+                                <span>Tax</span>
+                                <span id="summaryTax">€0.00</span>
+                            </div>
+
+                            <div class="summary-divider"></div>
+
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span id="summaryTotal">€0.00</span>
+                            </div>
+
+                            <div class="security-badge">
+                                <span>🔒</span>
+                                <span>100% Secure Checkout</span>
+                            </div>
+
+                            <div class="payment-methods-accepted">
+                                <p>We accept:</p>
+                                <div class="payment-icons">
+                                    <span title="Visa">💳</span>
+                                    <span title="Mastercard">💳</span>
+                                    <span title="PayPal">🅿️</span>
+                                    <span title="Apple Pay">🍎</span>
+                                    <span title="Google Pay">🔵</span>
+                                </div>
+                            </div>
+
+                            <div class="guarantees">
+                                <div class="guarantee">✓ Money Back Guarantee</div>
+                                <div class="guarantee">✓ Free Returns</div>
+                                <div class="guarantee">✓ Secure Payment</div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">🔒</div>
+                        <h3>Secure Checkout</h3>
+                        <p>SSL encrypted</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🚚</div>
+                        <h3>Fast Shipping</h3>
+                        <p>5-7 days</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💚</div>
+                        <h3>Easy Returns</h3>
+                        <p>30-day guarantee</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💬</div>
+                        <h3>Support</h3>
+                        <p>24/7 help</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About DANHAYS</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/shipping">Shipping Info</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms">Terms of Service</a></li>
+                        <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhaysbeauty" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@danhaysbeauty" target="_blank">TikTok</a>
+                        <a href="https://youtube.com/danhaysbeauty" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/danhaysbeauty" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 🌍</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/checkout.js"></script>
+</body>
+</html>
