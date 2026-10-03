@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Shopping Cart | DANHAYS</title>
+    <meta name="description" content="Review your shopping cart and proceed to checkout">
+    
+    <link rel="stylesheet" href="../src/css/variables.css">
+    <link rel="stylesheet" href="../src/css/global.css">
+    <link rel="stylesheet" href="../src/css/components.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading cart...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-promo">
+                        <span>✨ Free Shipping on orders over €75 | 24/7 Support</span>
+                    </div>
+                    <div class="header-utilities">
+                        <a href="#" class="utility-link">Track Order</a>
+                        <a href="#" class="utility-link">Help Center</a>
+                        <a href="#" class="utility-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="navbar-brand">
+                        <a href="index.html" class="logo">
+                            <span class="logo-emoji">💎</span>
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Shop</a>
+                            <ul class="submenu">
+                                <li><a href="shop.html?category=face">Face</a></li>
+                                <li><a href="shop.html?category=eyes">Eyes</a></li>
+                                <li><a href="shop.html?category=lips">Lips</a></li>
+                                <li><a href="shop.html?category=skincare">Skincare</a></li>
+                                <li><a href="shop.html?category=haircare">Haircare</a></li>
+                                <li><a href="shop.html?category=bodycare">Bodycare</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="brands.html" class="nav-link">Brands</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+
+                    <div class="header-actions">
+                        <button class="action-btn search-btn" id="searchBtn">🔍</button>
+                        <a href="user/wishlist.html" class="action-btn">❤️<span class="badge" id="wishlistBadge">0</span></a>
+                        <a href="user/login.html" class="action-btn">👤</a>
+                        <a href="cart.html" class="action-btn">🛍️<span class="badge" id="cartBadge">3</span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products, brands...">
+                    <button id="searchSubmit">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Shopping Cart</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Container -->
+        <div class="cart-container">
+            <div class="container">
+                <div class="cart-layout">
+                    <!-- Cart Items -->
+                    <section class="cart-main">
+                        <div class="cart-header">
+                            <h1>Shopping Cart</h1>
+                            <p id="cartItemCount">3 items</p>
+                        </div>
+
+                        <div class="cart-items" id="cartItems">
+                            <!-- Item 1 -->
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23f0e6d2' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='%23D4AF37' text-anchor='middle' dy='.3em'%3E💄%3C/text%3E%3C/svg%3E" alt="Product">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Pro Filt'r Foundation</h3>
+                                    <p class="brand">Fenty Beauty</p>
+                                    <p class="variant">Shade: Golden Medium</p>
+                                </div>
+                                <div class="item-price">
+                                    <span class="price">€35.00</span>
+                                </div>
+                                <div class="item-quantity">
+                                    <button class="qty-btn">−</button>
+                                    <input type="number" value="1" min="1" class="qty-input">
+                                    <button class="qty-btn">+</button>
+                                </div>
+                                <div class="item-total">
+                                    <span class="total">€35.00</span>
+                                </div>
+                                <button class="remove-btn" onclick="this.parentElement.remove()">🗑️</button>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23f0e6d2' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='%23D4AF37' text-anchor='middle' dy='.3em'%3E👁️%3C/text%3E%3C/svg%3E" alt="Product">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Eye Primer Pro</h3>
+                                    <p class="brand">Fenty Beauty</p>
+                                </div>
+                                <div class="item-price">
+                                    <span class="price">€28.00</span>
+                                </div>
+                                <div class="item-quantity">
+                                    <button class="qty-btn">−</button>
+                                    <input type="number" value="1" min="1" class="qty-input">
+                                    <button class="qty-btn">+</button>
+                                </div>
+                                <div class="item-total">
+                                    <span class="total">€28.00</span>
+                                </div>
+                                <button class="remove-btn" onclick="this.parentElement.remove()">🗑️</button>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23f0e6d2' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='%23D4AF37' text-anchor='middle' dy='.3em'%3E💋%3C/text%3E%3C/svg%3E" alt="Product">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Pro Fuchsia Lipstick</h3>
+                                    <p class="brand">Fenty Beauty</p>
+                                </div>
+                                <div class="item-price">
+                                    <span class="price">€25.00</span>
+                                </div>
+                                <div class="item-quantity">
+                                    <button class="qty-btn">−</button>
+                                    <input type="number" value="1" min="1" class="qty-input">
+                                    <button class="qty-btn">+</button>
+                                </div>
+                                <div class="item-total">
+                                    <span class="total">€25.00</span>
+                                </div>
+                                <button class="remove-btn" onclick="this.parentElement.remove()">🗑️</button>
+                            </div>
+                        </div>
+
+                        <div class="cart-actions">
+                            <a href="shop.html" class="btn btn-outline">← Continue Shopping</a>
+                            <button class="btn btn-outline" id="clearCartBtn">Clear Cart</button>
+                        </div>
+
+                        <!-- Empty State -->
+                        <div class="empty-cart" style="display: none;">
+                            <div class="empty-icon">🛍️</div>
+                            <h3>Your cart is empty</h3>
+                            <p>Start shopping to add items to your cart</p>
+                            <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                        </div>
+                    </section>
+
+                    <!-- Order Summary -->
+                    <aside class="cart-summary">
+                        <div class="summary-card">
+                            <h2>Order Summary</h2>
+
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="subtotal">€88.00</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span id="shipping">Free</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Tax (VAT 21%)</span>
+                                <span id="tax">€18.48</span>
+                            </div>
+
+                            <div class="promo-code">
+                                <input type="text" id="promoCode" placeholder="Promo code">
+                                <button class="btn btn-sm btn-outline">Apply</button>
+                            </div>
+
+                            <div class="summary-total">
+                                <span>Total</span>
+                                <span id="total">€106.48</span>
+                            </div>
+
+                            <a href="checkout.html" class="btn btn-primary btn-lg btn-block">Proceed to Checkout</a>
+
+                            <div class="trust-badges">
+                                <div class="badge">
+                                    <span>🚚</span> Free shipping on €75+
+                                </div>
+                                <div class="badge">
+                                    <span>🔒</span> Secure checkout
+                                </div>
+                                <div class="badge">
+                                    <span>↩️</span> 60-day returns
+                                </div>
+                            </div>
+
+                            <div class="promo-banner">
+                                <p>💝 Complete your purchase to earn rewards points!</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About DANHAYS</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhays" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@danhays" target="_blank">🎵 TikTok</a>
+                        <a href="https://youtube.com/@danhays" target="_blank">📹 YouTube</a>
+                        <a href="https://twitter.com/danhays" target="_blank">𝕏 Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 💎</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script>
+        // Quantity controls
+        document.querySelectorAll('.qty-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const input = e.target.parentElement.querySelector('.qty-input');
+                if (e.target.textContent === '−') {
+                    input.value = Math.max(1, parseInt(input.value) - 1);
+                } else {
+                    input.value = parseInt(input.value) + 1;
+                }
+                updateCart();
+            });
+        });
+
+        // Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Search Toggle
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            document.getElementById('searchBar').classList.toggle('active');
+        });
+
+        // Clear cart
+        document.getElementById('clearCartBtn').addEventListener('click', () => {
+            if (confirm('Clear your cart?')) {
+                document.getElementById('cartItems').innerHTML = '';
+                document.querySelector('.empty-cart').style.display = 'block';
+                updateCart();
+            }
+        });
+
+        function updateCart() {
+            const items = document.querySelectorAll('.cart-item');
+            let subtotal = 0;
+            
+            items.forEach(item => {
+                const price = parseFloat(item.querySelector('.price').textContent.replace('€', ''));
+                const qty = parseInt(item.querySelector('.qty-input').value);
+                const total = price * qty;
+                item.querySelector('.total').textContent = '€' + total.toFixed(2);
+                subtotal += total;
+            });
+
+            const tax = subtotal * 0.21;
+            const shipping = subtotal >= 75 ? 0 : 10;
+            const total = subtotal + tax + shipping;
+
+            document.getElementById('subtotal').textContent = '€' + subtotal.toFixed(2);
+            document.getElementById('tax').textContent = '€' + tax.toFixed(2);
+            document.getElementById('shipping').textContent = shipping === 0 ? 'Free' : '€' + shipping.toFixed(2);
+            document.getElementById('total').textContent = '€' + total.toFixed(2);
+            document.getElementById('cartItemCount').textContent = items.length + ' items';
+        }
+
+        // Hide preloader
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
