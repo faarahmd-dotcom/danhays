@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Register | DANHAYS - The Home of Melanin Beauty</title>
+    <meta name="description" content="Create a new DANHAYS account">
+    
+    <link rel="stylesheet" href="../../src/css/variables.css">
+    <link rel="stylesheet" href="../../src/css/global.css">
+    <link rel="stylesheet" href="../../src/css/components.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-promo">
+                        <span>✨ Free Shipping on orders over €75 | 24/7 Support</span>
+                    </div>
+                    <div class="header-utilities">
+                        <a href="#" class="utility-link">Track Order</a>
+                        <a href="#" class="utility-link">Help Center</a>
+                        <a href="#" class="utility-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="navbar-brand">
+                        <a href="../index.html" class="logo">
+                            <span class="logo-emoji">💎</span>
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Shop</a>
+                            <ul class="submenu">
+                                <li><a href="../shop.html?category=face">Face</a></li>
+                                <li><a href="../shop.html?category=eyes">Eyes</a></li>
+                                <li><a href="../shop.html?category=lips">Lips</a></li>
+                                <li><a href="../shop.html?category=skincare">Skincare</a></li>
+                                <li><a href="../shop.html?category=haircare">Haircare</a></li>
+                                <li><a href="../shop.html?category=bodycare">Bodycare</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../brands.html" class="nav-link">Brands</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+
+                    <div class="header-actions">
+                        <button class="action-btn search-btn" id="searchBtn">🔍</button>
+                        <a href="../wishlist.html" class="action-btn">❤️<span class="badge" id="wishlistBadge">0</span></a>
+                        <a href="login.html" class="action-btn">👤</a>
+                        <a href="../cart.html" class="action-btn">🛍️<span class="badge" id="cartBadge">0</span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products, brands...">
+                    <button id="searchSubmit">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <span>Register</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Container -->
+        <div class="auth-container">
+            <div class="container">
+                <div class="auth-wrapper">
+                    <div class="auth-form-section">
+                        <div class="auth-header">
+                            <h1>Join DANHAYS</h1>
+                            <p>Create your account and start shopping</p>
+                        </div>
+
+                        <form id="registerForm" class="auth-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="you@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required placeholder="••••••••">
+                                <small>At least 8 characters with uppercase, lowercase, and numbers</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="••••••••">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+32-2-123-4567">
+                            </div>
+
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                                <label for="newsletter">Send me exclusive offers and beauty tips</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                Create Account
+                            </button>
+                        </form>
+
+                        <div class="auth-divider">
+                            <span>OR</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button class="btn btn-outline btn-lg btn-block">
+                                <span>📘</span> Sign up with Facebook
+                            </button>
+                            <button class="btn btn-outline btn-lg btn-block">
+                                <span>🔍</span> Sign up with Google
+                            </button>
+                        </div>
+
+                        <div class="auth-footer">
+                            <p>Already have an account? <a href="login.html">Sign in here</a></p>
+                        </div>
+                    </div>
+
+                    <div class="auth-info-section">
+                        <div class="info-card">
+                            <h3>🎉 Welcome Bonus</h3>
+                            <ul>
+                                <li>✓ €10 off your first order</li>
+                                <li>✓ Free shipping on orders €75+</li>
+                                <li>✓ Exclusive member access</li>
+                                <li>✓ Early sale notifications</li>
+                                <li>✓ Birthday specials</li>
+                                <li>✓ Referral rewards</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🛡️ We Protect You</h3>
+                            <ul>
+                                <li>✓ Secure registration</li>
+                                <li>✓ Encrypted data</li>
+                                <li>✓ No spam emails</li>
+                                <li>✓ Unsubscribe anytime</li>
+                                <li>✓ GDPR compliant</li>
+                                <li>✓ Account control</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About DANHAYS</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhays" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@danhays" target="_blank">🎵 TikTok</a>
+                        <a href="https://youtube.com/@danhays" target="_blank">📹 YouTube</a>
+                        <a href="https://twitter.com/danhays" target="_blank">𝕏 Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 💎</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../src/js/main.js"></script>
+    <script>
+        // Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Search Toggle
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            document.getElementById('searchBar').classList.toggle('active');
+        });
+
+        // Registration Form
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters!');
+                return;
+            }
+            
+            // Store user session
+            localStorage.setItem('userProfile', JSON.stringify({
+                id: Math.random(),
+                firstName: firstName,
+                email: email,
+                role: 'customer',
+                joinDate: new Date().toISOString()
+            }));
+            
+            alert('Account created successfully! Redirecting to your profile...');
+            window.location.href = 'profile.html';
+        });
+
+        // Hide preloader
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
