@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title id="pageTitle">Brand | DANHAYS</title>
+    <meta id="pageDescription" name="description" content="Discover this curated beauty brand at DANHAYS">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="ogUrl" content="https://danhays.com/brand">
+    <meta property="og:title" id="ogTitle" content="Brand | DANHAYS">
+    <meta property="og:description" id="ogDescription" content="Discover this curated beauty brand">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/variables.css">
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/components.css">
+    <link rel="stylesheet" href="/src/css/brand-detail.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading brand...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="left">
+                        <p>Welcome to DANHAYS - The Home of Melanin Beauty</p>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="link">Track Order</a>
+                        <span>|</span>
+                        <a href="#" class="link">Help Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="/" class="logo-link">
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <nav class="nav-main">
+                        <ul class="nav-list">
+                            <li><a href="/shop?category=face" class="nav-link">Face</a></li>
+                            <li><a href="/shop?category=eyes" class="nav-link">Eyes</a></li>
+                            <li><a href="/shop?category=lips" class="nav-link">Lips</a></li>
+                            <li><a href="/shop?category=skincare" class="nav-link">Skincare</a></li>
+                            <li><a href="/shop?category=haircare" class="nav-link">Haircare</a></li>
+                            <li><a href="/brands" class="nav-link">Brands</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-icons">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <span>🔍</span>
+                        </button>
+                        <a href="/account" class="icon-btn">
+                            <span>👤</span>
+                        </a>
+                        <a href="/wishlist" class="icon-btn">
+                            <span>❤️</span>
+                        </a>
+                        <a href="/cart" class="icon-btn cart-btn">
+                            <span>🛒</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Breadcrumb Navigation -->
+        <section class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>/</span>
+                    <a href="/brands">Brands</a>
+                    <span>/</span>
+                    <span id="breadcrumbBrand">Brand</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Hero Section -->
+        <section class="brand-hero" id="brandHero">
+            <div class="hero-background" id="heroBackground"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-logo" id="heroLogo">🎨</div>
+                    <div class="hero-text">
+                        <h1 id="brandName">Brand Name</h1>
+                        <p id="brandTagline" class="hero-tagline">Brand tagline</p>
+                        <div class="hero-badges" id="heroBadges"></div>
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <div class="stat-number" id="brandRating">4.9</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="stat-number" id="brandReviews">5.2k</div>
+                                <div class="stat-label">Reviews</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="stat-number" id="brandProducts">180</div>
+                                <div class="stat-label">Products</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Overview Section -->
+        <section class="brand-overview">
+            <div class="container">
+                <div class="overview-grid">
+                    <!-- About Brand -->
+                    <div class="overview-card">
+                        <h3>About The Brand</h3>
+                        <p id="brandDescription">Brand description goes here</p>
+                        <div class="brand-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Founded:</span>
+                                <span id="brandFounded" class="detail-value">2017</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Specialty:</span>
+                                <span id="brandSpecialty" class="detail-value">Makeup</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Price Range:</span>
+                                <span id="brandPriceRange" class="detail-value">Premium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brand Values -->
+                    <div class="overview-card">
+                        <h3>Brand Values</h3>
+                        <div class="values-list" id="brandValues"></div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="overview-card">
+                        <h3>Quick Links</h3>
+                        <div class="quick-actions">
+                            <button class="btn btn-primary w-full" id="shopBrandBtn">
+                                Shop This Brand
+                            </button>
+                            <button class="btn btn-outline w-full" id="followBrandBtn">
+                                ♡ Follow Brand
+                            </button>
+                            <button class="btn btn-outline w-full" id="shareBrandBtn">
+                                Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Collections Section -->
+        <section class="brand-collections">
+            <div class="container">
+                <h2 class="section-title">Shop by Category</h2>
+                <div class="collections-grid" id="collectionsGrid">
+                    <!-- Collections will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <div class="container">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-carousel" id="productsCarousel">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Story Section -->
+        <section class="brand-story">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-image" id="storyImage"></div>
+                    <div class="story-content">
+                        <h2>The Brand Story</h2>
+                        <p id="brandStory">
+                            Every great brand has a story. This is the story of how this brand came to be, 
+                            their mission, and what makes them special in the beauty industry.
+                        </p>
+                        <ul class="story-highlights" id="storyHighlights">
+                            <li>Innovation in formulation</li>
+                            <li>Commitment to quality</li>
+                            <li>Community-driven approach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="brand-reviews">
+            <div class="container">
+                <h2 class="section-title">Customer Reviews</h2>
+                <div class="reviews-container">
+                    <div class="reviews-summary">
+                        <div class="rating-overview">
+                            <div class="rating-number" id="reviewsRating">4.9</div>
+                            <div class="rating-stars" id="reviewsStars"></div>
+                            <div class="rating-count" id="reviewsCount">Based on 5,200 reviews</div>
+                        </div>
+                        <div class="rating-breakdown" id="ratingBreakdown"></div>
+                    </div>
+                    <div class="reviews-list" id="reviewsList"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand FAQ Section -->
+        <section class="brand-faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-container" id="faqContainer">
+                    <!-- FAQs will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Brands Section -->
+        <section class="related-brands">
+            <div class="container">
+                <h2 class="section-title">Similar Brands You Might Like</h2>
+                <div class="related-brands-grid" id="relatedBrandsGrid">
+                    <!-- Related brands will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <h3>Carefully Curated</h3>
+                        <p>Every brand is vetted</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">👥</div>
+                        <h3>Community Driven</h3>
+                        <p>Trusted by millions</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🌍</div>
+                        <h3>Diverse Origins</h3>
+                        <p>Global brands</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💎</div>
+                        <h3>Quality First</h3>
+                        <p>Premium products</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About DANHAYS</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/shipping">Shipping Info</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms">Terms of Service</a></li>
+                        <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhaysbeauty" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@danhaysbeauty" target="_blank">TikTok</a>
+                        <a href="https://youtube.com/danhaysbeauty" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/danhaysbeauty" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 🌍</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/brand-detail.js"></script>
+</body>
+</html>
