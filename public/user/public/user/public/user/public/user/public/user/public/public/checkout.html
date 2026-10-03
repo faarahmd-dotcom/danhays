@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Checkout | DANHAYS</title>
+    <meta name="description" content="Complete your DANHAYS purchase">
+    
+    <link rel="stylesheet" href="../src/css/variables.css">
+    <link rel="stylesheet" href="../src/css/global.css">
+    <link rel="stylesheet" href="../src/css/components.css">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#D4AF37">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-promo">
+                        <span>✨ Free Shipping on orders over €75 | 24/7 Support</span>
+                    </div>
+                    <div class="header-utilities">
+                        <a href="#" class="utility-link">Track Order</a>
+                        <a href="#" class="utility-link">Help Center</a>
+                        <a href="#" class="utility-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="navbar-brand">
+                        <a href="index.html" class="logo">
+                            <span class="logo-emoji">💎</span>
+                            <span class="logo-text">DANHAYS</span>
+                        </a>
+                    </div>
+
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Shop</a>
+                            <ul class="submenu">
+                                <li><a href="shop.html?category=face">Face</a></li>
+                                <li><a href="shop.html?category=eyes">Eyes</a></li>
+                                <li><a href="shop.html?category=lips">Lips</a></li>
+                                <li><a href="shop.html?category=skincare">Skincare</a></li>
+                                <li><a href="shop.html?category=haircare">Haircare</a></li>
+                                <li><a href="shop.html?category=bodycare">Bodycare</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="brands.html" class="nav-link">Brands</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+
+                    <div class="header-actions">
+                        <button class="action-btn search-btn" id="searchBtn">🔍</button>
+                        <a href="user/wishlist.html" class="action-btn">❤️<span class="badge" id="wishlistBadge">0</span></a>
+                        <a href="user/login.html" class="action-btn">👤</a>
+                        <a href="cart.html" class="action-btn">🛍️<span class="badge" id="cartBadge">3</span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products, brands...">
+                    <button id="searchSubmit">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="cart.html">Cart</a>
+                    <span>/</span>
+                    <span>Checkout</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Container -->
+        <div class="checkout-container">
+            <div class="container">
+                <!-- Progress Steps -->
+                <div class="checkout-progress">
+                    <div class="progress-step active">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Shipping</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Payment</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Review</div>
+                    </div>
+                </div>
+
+                <div class="checkout-layout">
+                    <!-- Checkout Form -->
+                    <section class="checkout-main">
+                        <form id="checkoutForm">
+                            <!-- Step 1: Shipping -->
+                            <div class="checkout-section active" id="step-shipping">
+                                <h2>Shipping Information</h2>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address">Street Address</label>
+                                    <input type="text" id="address" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postalCode">Postal Code</label>
+                                        <input type="text" id="postalCode" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="country">Country</label>
+                                        <select id="country" required>
+                                            <option value="">Select country</option>
+                                            <option value="nl">Netherlands</option>
+                                            <option value="be">Belgium</option>
+                                            <option value="fr">France</option>
+                                            <option value="de">Germany</option>
+                                            <option value="uk">United Kingdom</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" required>
+                                    </div>
+                                </div>
+
+                                <div class="shipping-methods">
+                                    <h3>Shipping Method</h3>
+                                    <div class="method">
+                                        <input type="radio" id="standard" name="shipping" value="standard" checked>
+                                        <label for="standard">
+                                            <div class="method-info">
+                                                <strong>Standard Shipping</strong>
+                                                <p>3-5 business days</p>
+                                            </div>
+                                            <span class="method-price">Free</span>
+                                        </label>
+                                    </div>
+                                    <div class="method">
+                                        <input type="radio" id="express" name="shipping" value="express">
+                                        <label for="express">
+                                            <div class="method-info">
+                                                <strong>Express Shipping</strong>
+                                                <p>1-2 business days</p>
+                                            </div>
+                                            <span class="method-price">€15.00</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-primary btn-lg" onclick="goToStep(2)">
+                                    Continue to Payment →
+                                </button>
+                            </div>
+
+                            <!-- Step 2: Payment -->
+                            <div class="checkout-section" id="step-payment">
+                                <h2>Payment Information</h2>
+
+                                <div class="payment-methods">
+                                    <div class="method-option active">
+                                        <input type="radio" id="card" name="paymentMethod" value="card" checked>
+                                        <label for="card">💳 Credit Card</label>
+                                    </div>
+                                    <div class="method-option">
+                                        <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                        <label for="paypal">🅿️ PayPal</label>
+                                    </div>
+                                    <div class="method-option">
+                                        <input type="radio" id="klarna" name="paymentMethod" value="klarna">
+                                        <label for="klarna">🛍️ Klarna</label>
+                                    </div>
+                                    <div class="method-option">
+                                        <input type="radio" id="bank" name="paymentMethod" value="bank">
+                                        <label for="bank">🏦 Bank Transfer</label>
+                                    </div>
+                                </div>
+
+                                <div id="cardPayment" class="payment-form">
+                                    <div class="form-group">
+                                        <label for="cardName">Cardholder Name</label>
+                                        <input type="text" id="cardName" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="cardNumber">Card Number</label>
+                                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiry">Expiry Date</label>
+                                            <input type="text" id="expiry" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" placeholder="123" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" id="saveCard">
+                                    <label for="saveCard">Save this card for future purchases</label>
+                                </div>
+
+                                <div class="button-group">
+                                    <button type="button" class="btn btn-outline btn-lg" onclick="goToStep(1)">
+                                        ← Back to Shipping
+                                    </button>
+                                    <button type="button" class="btn btn-primary btn-lg" onclick="goToStep(3)">
+                                        Review Order →
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Review -->
+                            <div class="checkout-section" id="step-review">
+                                <h2>Order Review</h2>
+
+                                <div class="review-section">
+                                    <h3>Shipping Address</h3>
+                                    <p id="reviewAddress"></p>
+                                </div>
+
+                                <div class="review-section">
+                                    <h3>Order Items</h3>
+                                    <div id="reviewItems"></div>
+                                </div>
+
+                                <div class="review-section">
+                                    <h3>Order Total</h3>
+                                    <div class="review-total">
+                                        <div class="total-row">
+                                            <span>Subtotal</span>
+                                            <span id="reviewSubtotal">€88.00</span>
+                                        </div>
+                                        <div class="total-row">
+                                            <span>Shipping</span>
+                                            <span id="reviewShipping">Free</span>
+                                        </div>
+                                        <div class="total-row">
+                                            <span>Tax</span>
+                                            <span id="reviewTax">€18.48</span>
+                                        </div>
+                                        <div class="total-row grand-total">
+                                            <span>Total</span>
+                                            <span id="reviewTotal">€106.48</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" id="agreeTerms" required>
+                                    <label for="agreeTerms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                                </div>
+
+                                <div class="button-group">
+                                    <button type="button" class="btn btn-outline btn-lg" onclick="goToStep(2)">
+                                        ← Back to Payment
+                                    </button>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-success">
+                                        Place Order 🎉
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Order Summary Sidebar -->
+                    <aside class="checkout-summary">
+                        <div class="summary-card">
+                            <h2>Order Summary</h2>
+
+                            <div class="summary-items">
+                                <div class="summary-item">
+                                    <span>Pro Filt'r Foundation × 1</span>
+                                    <span>€35.00</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Eye Primer × 1</span>
+                                    <span>€28.00</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Lipstick × 1</span>
+                                    <span>€25.00</span>
+                                </div>
+                            </div>
+
+                            <div class="summary-divider"></div>
+
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span>€88.00</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span id="sidebarShipping">Free</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Tax (21%)</span>
+                                <span>€18.48</span>
+                            </div>
+
+                            <div class="summary-total">
+                                <span>Total</span>
+                                <span>€106.48</span>
+                            </div>
+
+                            <div class="security-info">
+                                <p>🔒 Secure SSL encrypted checkout</p>
+                                <p>✓ 174+ payment methods accepted</p>
+                                <p>↩️ 60-day money back guarantee</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About DANHAYS</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/danhays" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@danhays" target="_blank">🎵 TikTok</a>
+                        <a href="https://youtube.com/@danhays" target="_blank">📹 YouTube</a>
+                        <a href="https://twitter.com/danhays" target="_blank">𝕏 Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DANHAYS BV. All rights reserved.</p>
+                <p>The Home of Melanin Beauty 💎</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script>
+        function goToStep(step) {
+            document.querySelectorAll('.checkout-section').forEach(s => s.classList.remove('active'));
+            document.getElementById('step-' + (['shipping', 'payment', 'review'][step - 1])).classList.add('active');
+            
+            document.querySelectorAll('.progress-step').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.progress-step')[step - 1].classList.add('active');
+        }
+
+        document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Order placed successfully! Redirecting to confirmation...');
+            window.location.href = 'order-confirmation.html';
+        });
+
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            document.getElementById('searchBar').classList.toggle('active');
+        });
+
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
