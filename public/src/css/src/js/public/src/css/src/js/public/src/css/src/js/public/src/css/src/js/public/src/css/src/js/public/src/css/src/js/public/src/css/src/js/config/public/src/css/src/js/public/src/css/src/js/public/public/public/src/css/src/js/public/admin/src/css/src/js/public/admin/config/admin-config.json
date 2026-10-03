@@ -1,0 +1,157 @@
+{
+  "adminPanel": {
+    "version": "1.0",
+    "environment": "production",
+    "features": {
+      "productManagement": {
+        "enabled": true,
+        "maxProducts": 10000,
+        "allowBulkUpload": true,
+        "imageUploadLimit": 5242880,
+        "videoUploadLimit": 104857600
+      },
+      "orderManagement": {
+        "enabled": true,
+        "statuses": ["pending", "processing", "shipped", "delivered", "cancelled", "returned"],
+        "allowPartialRefunds": true,
+        "autoNotifyCustomers": true
+      },
+      "userManagement": {
+        "enabled": true,
+        "maxUsers": 1000000,
+        "tiers": ["bronze", "silver", "gold", "diamond"],
+        "allowBulkActions": true
+      },
+      "brandManagement": {
+        "enabled": true,
+        "maxBrands": 1000,
+        "requireApproval": true
+      },
+      "inventoryManagement": {
+        "enabled": true,
+        "trackInventory": true,
+        "lowStockAlert": true,
+        "autoReorder": false
+      },
+      "paymentManagement": {
+        "enabled": true,
+        "processors": ["stripe", "paypal", "klarna", "afterpay"],
+        "autoSettlement": true,
+        "settlementDays": 2
+      },
+      "reportingAnalytics": {
+        "enabled": true,
+        "exportFormats": ["csv", "pdf", "xlsx"],
+        "dataRetention": 365
+      },
+      "contentManagement": {
+        "enabled": true,
+        "allowBlog": true,
+        "allowBanners": true,
+        "allowPromotions": true
+      }
+    },
+    "permissions": {
+      "admin": {
+        "level": 10,
+        "canManageAll": true,
+        "canDeleteUsers": true,
+        "canViewAnalytics": true,
+        "canManagePayments": true,
+        "canManageSettings": true
+      },
+      "moderator": {
+        "level": 5,
+        "canManageProducts": true,
+        "canManageOrders": true,
+        "canManageUsers": false,
+        "canViewAnalytics": true,
+        "canManageSettings": false
+      },
+      "staff": {
+        "level": 2,
+        "canManageProducts": false,
+        "canManageOrders": true,
+        "canManageUsers": false,
+        "canViewAnalytics": false,
+        "canManageSettings": false
+      }
+    },
+    "notifications": {
+      "newOrder": {
+        "enabled": true,
+        "channels": ["email", "dashboard", "sms"]
+      },
+      "lowStock": {
+        "enabled": true,
+        "threshold": 20,
+        "channels": ["email", "dashboard"]
+      },
+      "newReview": {
+        "enabled": true,
+        "channels": ["email", "dashboard"]
+      },
+      "userSignup": {
+        "enabled": true,
+        "channels": ["dashboard"]
+      },
+      "paymentIssue": {
+        "enabled": true,
+        "channels": ["email", "dashboard", "sms"]
+      }
+    },
+    "systemSettings": {
+      "siteName": "DANHAYS",
+      "siteUrl": "https://danhays.com",
+      "timezone": "CET",
+      "currency": "EUR",
+      "languages": ["en", "nl", "fr", "sw"],
+      "maintenanceMode": false,
+      "debugMode": false,
+      "apiRateLimit": 1000,
+      "sessionTimeout": 3600,
+      "backupFrequency": "daily",
+      "logRetention": 90
+    },
+    "paymentSettings": {
+      "stripePublishable": "pk_live_XXXXXX",
+      "stripeBillingApiKey": "rk_live_XXXXXX",
+      "paypalClientId": "XXXXXX",
+      "klarnaAPIKey": "XXXXXX",
+      "currencyConversion": true,
+      "pciCompliance": true,
+      "fraudDetection": true,
+      "threeDSecure": true
+    },
+    "emailSettings": {
+      "smtpHost": "smtp.gmail.com",
+      "smtpPort": 587,
+      "senderEmail": "noreply@danhays.com",
+      "senderName": "DANHAYS",
+      "templates": {
+        "orderConfirmation": true,
+        "shipmentNotification": true,
+        "deliveryConfirmation": true,
+        "reviewRequest": true,
+        "abandonedCart": true,
+        "passwordReset": true,
+        "promotionalEmail": true
+      }
+    },
+    "securitySettings": {
+      "requireTwoFactor": true,
+      "sessionSecurity": "strict",
+      "passwordPolicy": {
+        "minLength": 12,
+        "requireNumbers": true,
+        "requireSpecialChars": true,
+        "requireUppercase": true,
+        "expiryDays": 90
+      },
+      "ipWhitelist": [],
+      "maxLoginAttempts": 5,
+      "loginAttemptWindow": 900,
+      "encryptionLevel": "AES-256"
+    }
+  }
+}
