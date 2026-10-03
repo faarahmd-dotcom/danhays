@@ -1,0 +1,113 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Face",
+      "slug": "face",
+      "icon": "💄",
+      "description": "Foundation, concealer, powder, bronzer, blush, and more",
+      "productCount": 650,
+      "subcategories": [
+        "Foundation",
+        "Concealer",
+        "Powder",
+        "Bronzer",
+        "Blush",
+        "Highlighter",
+        "Primer",
+        "Setting Spray",
+        "Face Masks"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Eyes",
+      "slug": "eyes",
+      "icon": "👁️",
+      "description": "Eyeshadow, eyeliner, mascara, eyebrow products",
+      "productCount": 520,
+      "subcategories": [
+        "Eyeshadow",
+        "Eyeliner",
+        "Mascara",
+        "Eyebrow Pencil",
+        "Eye Primer",
+        "Eyebrow Gel",
+        "Eye Serum",
+        "False Lashes"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Lips",
+      "slug": "lips",
+      "icon": "💋",
+      "description": "Lipstick, lip gloss, lip liner, lip balm",
+      "productCount": 480,
+      "subcategories": [
+        "Lipstick",
+        "Lip Gloss",
+        "Lip Liner",
+        "Lip Balm",
+        "Liquid Lipstick",
+        "Lip Stain",
+        "Lip Plumper",
+        "Lip Oil"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Skincare",
+      "slug": "skincare",
+      "icon": "✨",
+      "description": "Cleansers, moisturizers, serums, treatments",
+      "productCount": 420,
+      "subcategories": [
+        "Cleanser",
+        "Moisturizer",
+        "Serum",
+        "Face Mask",
+        "Sunscreen",
+        "Exfoliator",
+        "Toner",
+        "Eye Cream"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Haircare",
+      "slug": "haircare",
+      "icon": "💇",
+      "description": "Shampoo, conditioner, hair oils, treatments",
+      "productCount": 280,
+      "subcategories": [
+        "Shampoo",
+        "Conditioner",
+        "Hair Oil",
+        "Hair Mask",
+        "Leave-In Conditioner",
+        "Hair Gel",
+        "Curl Cream",
+        "Hair Serum"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Bodycare",
+      "slug": "bodycare",
+      "icon": "💅",
+      "description": "Body lotion, body wash, body butter, scrubs",
+      "productCount": 180,
+      "subcategories": [
+        "Body Lotion",
+        "Body Wash",
+        "Body Butter",
+        "Body Scrub",
+        "Hand Cream",
+        "Foot Cream",
+        "Body Oil",
+        "Body Mist"
+      ]
+    }
+  ]
+}
